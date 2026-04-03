@@ -1,12 +1,18 @@
 ﻿<!DOCTYPE html>
 
-<html class="light" lang="vi"><head><meta charset="UTF-8">
+<html class="light" lang="vi">
 
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<head>
+    <meta charset="UTF-8">
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -70,512 +76,592 @@
                         "body": ["Inter"],
                         "label": ["Inter"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+        }
+
         .quiet-input:focus {
             outline: none;
             border-bottom-color: #1A1A1A;
         }
+
         .form-container {
             max-width: 600px;
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-<style>
-    /* Styling according to user requirement */
-    button:not(.rounded-full):not([class*="rounded-full"]), 
-    a:not(.rounded-full)[class*="bg-[#222222]"], 
-    a:not(.rounded-full)[class*="bg-black"],
-    .card-rounded:not(.rounded-full) {
-        border-radius: 8px !important;
-    }
-</style>
-<style>
-    /* Absolute perfect centering for the Routine logo */
-    nav, header { position: relative; }
-    nav img[alt="ROUTINE"], header img[alt="ROUTINE"] {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        margin: 0 !important;
-        height: 32px !important; max-height: 100% !important;
-        z-index: 10 !important;
-    }
-    nav a:has(img[alt="ROUTINE"]), header a:has(img[alt="ROUTINE"]) {
-        position: static !important;
-        display: block !important;
-        flex-grow: 0 !important;
-    }
-</style>
-<style>
-    /* Force white background */
-    body, html {
-        background-color: #FFFFFF !important;
-        background-image: none !important;
-    }
-    .linen-texture {
-        background-image: none !important;
-        background-color: #FFFFFF !important;
-    }
-</style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        /* Styling according to user requirement */
+        button:not(.rounded-full):not([class*="rounded-full"]),
+        a:not(.rounded-full)[class*="bg-[#222222]"],
+        a:not(.rounded-full)[class*="bg-black"],
+        .card-rounded:not(.rounded-full) {
+            border-radius: 8px !important;
+        }
+    </style>
+    <style>
+        /* Absolute perfect centering for the Routine logo */
+        nav,
+        header {
+            position: relative;
+        }
+
+        nav img[alt="ROUTINE"],
+        header img[alt="ROUTINE"] {
+            position: absolute !important;
+            left: 50% !important;
+            top: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            margin: 0 !important;
+            height: 32px !important;
+            max-height: 100% !important;
+            z-index: 10 !important;
+        }
+
+        nav a:has(img[alt="ROUTINE"]),
+        header a:has(img[alt="ROUTINE"]) {
+            position: static !important;
+            display: block !important;
+            flex-grow: 0 !important;
+        }
+    </style>
+    <style>
+        /* Force white background */
+        body,
+        html {
+            background-color: #FFFFFF !important;
+            background-image: none !important;
+        }
+
+        .linen-texture {
+            background-image: none !important;
+            background-color: #FFFFFF !important;
+        }
+    </style>
 </head>
+
 <body class="bg-surface text-on-surface antialiased">
-<!-- TopAppBar -->
-<header class="bg-[#F9F9F9]/80 backdrop-blur-xl dark:bg-[#222222]/80 fixed top-0 w-full z-50"><meta charset="UTF-8">
-<div class="flex justify-between items-center w-full px-8 py-4">
-<button class="text-[#222222] dark:text-[#F9F9F9] hover:opacity-70 transition-opacity duration-300">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<img src="https://media.routine.vn/0x0/prod/media/52ba65a3-e085-45a6-bf5e-fb9c359abff7.webp" alt="ROUTINE" class="h-4 sm:h-5 object-contain mx-auto" />
-<button class="text-[#222222] dark:text-[#F9F9F9] hover:opacity-70 transition-opacity duration-300">
-<span class="material-symbols-outlined">shopping_bag</span>
-</button>
-</div>
-</header>
-<!-- Main Content Canvas -->
-<main class="pt-24 pb-32 px-6 md:px-20 min-h-screen">
-<div class="max-w-7xl mx-auto">
-<!-- Header Section -->
-<div class="mb-16">
-<h2 class="text-4xl md:text-5xl font-bold tracking-tight text-[#222222] uppercase mb-4">TÍCH ĐIỂM SÀN</h2>
-<p class="text-on-surface-variant max-w-md leading-relaxed">Nhận điểm thành viên từ các đơn hàng trên sàn thương mại điện tử. Mỗi đơn hàng giúp bạn tiến gần hơn tới các ưu đãi độc quyền.</p>
-</div>
-<!-- Asymmetric Bento-style Layout -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-<!-- Left Side: Visual/Information Card -->
-<div class="lg:col-span-5 hidden lg:block">
-<div class="sticky top-32">
-<div class="rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(34,34,34,0.05)] bg-surface-container-lowest h-[600px] relative">
-<img class="w-full h-full object-cover grayscale contrast-125 opacity-90" data-alt="Close up of high quality textured fabric with minimalist studio lighting and subtle shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgrMSFsdD7BuEqBBj09siWJIVmRYi7cCUaJ7Iql0k1Wo8d7SQxkNBpor0I8ksQDxRNj8Z7UXmXqvjLD-gL7MBAzlfAQmSptgnUBGrrKe2LEkbL9VoN9UTwcQK6-MV3mNzDOULNfdl-KYjJ6KBIcyxCupn0TNzQMHJ0YWXEOIG-8S67h_bZFkx5rnm8_sdgt8ONQsRKCMuiYEkcYt5i5XIpZO7SWIryQW0WWxdlnQKDtPD_ko_g29wn6FixUgktoRnNNdKl-haL2udv"/>
-<div class="absolute inset-0 bg-gradient-to-t from-[#222222]/60 to-transparent flex flex-col justify-end p-12">
-<span class="text-white/70 text-xs tracking-[0.2em] mb-2 uppercase">Quyền lợi thành viên</span>
-<h3 class="text-white text-2xl font-semibold leading-snug">Mọi đơn hàng đều đáng giá. Biến phong cách thành điểm thưởng.</h3>
-</div>
-</div>
-</div>
-</div>
-<!-- Right Side: Claim Form -->
-<div class="lg:col-span-7">
-<section class="bg-surface-container-low p-8 md:p-12 rounded-xl">
-<form class="space-y-10">
-<!-- Platform Selection -->
-<div>
-<label class="text-[10px] tracking-[1.2px] uppercase font-semibold text-on-surface-variant mb-6 block">Chọn sàn thương mại điện tử</label>
-<div class="grid grid-cols-3 gap-4">
-<label class="cursor-pointer">
-<input checked="" class="hidden peer" name="platform" type="radio" value="shopee"/>
-<div class="border-b-2 border-transparent peer-checked:border-deep-charcoal py-3 text-center transition-all duration-300">
-<span class="text-sm tracking-widest font-medium text-on-surface-variant peer-checked:text-deep-charcoal uppercase">Shopee</span>
-</div>
-</label>
-<label class="cursor-pointer">
-<input class="hidden peer" name="platform" type="radio" value="lazada"/>
-<div class="border-b-2 border-transparent peer-checked:border-deep-charcoal py-3 text-center transition-all duration-300">
-<span class="text-sm tracking-widest font-medium text-on-surface-variant peer-checked:text-deep-charcoal uppercase">Lazada</span>
-</div>
-</label>
-<label class="cursor-pointer">
-<input class="hidden peer" name="platform" type="radio" value="tiktok"/>
-<div class="border-b-2 border-transparent peer-checked:border-deep-charcoal py-3 text-center transition-all duration-300">
-<span class="text-sm tracking-widest font-medium text-on-surface-variant peer-checked:text-deep-charcoal uppercase">Tiktok</span>
-</div>
-</label>
-</div>
-</div>
-<!-- Input Fields -->
-<div class="space-y-8">
-<div class="relative">
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-4 px-0 quiet-input text-sm tracking-widest font-medium placeholder:text-on-surface-variant/40 rounded-none" placeholder="MÃ ĐƠN HÀNG" type="text"/>
-<span class="absolute right-0 top-4 material-symbols-outlined text-on-surface-variant/40 scale-75">tag</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="relative">
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-4 px-0 quiet-input text-sm tracking-widest font-medium placeholder:text-on-surface-variant/40 rounded-none" placeholder="HỌ VÀ TÊN" type="text"/>
-</div>
-<div class="relative">
-<select class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-4 px-0 quiet-input text-sm tracking-widest font-medium text-on-surface-variant/40 rounded-none appearance-none">
-<option disabled="" selected="" value="">GIỚI TÍNH</option>
-<option value="male">NAM</option>
-<option value="female">NỮ</option>
-<option value="other">KHÁC</option>
-</select>
-<span class="absolute right-0 top-4 material-symbols-outlined text-on-surface-variant/40 scale-75">expand_more</span>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="relative">
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-4 px-0 quiet-input text-sm tracking-widest font-medium placeholder:text-on-surface-variant/40 rounded-none" placeholder="ĐỊA CHỈ EMAIL" type="email"/>
-</div>
-<div class="relative">
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-4 px-0 quiet-input text-sm tracking-widest font-medium placeholder:text-on-surface-variant/40 rounded-none" placeholder="SỐ ĐIỆN THOẠI TÍCH ĐIỂM" type="tel"/>
-</div>
-</div>
-</div>
-<!-- CTA -->
-<div class="pt-8">
-<button class="w-full bg-deep-charcoal text-white py-5 rounded-[6px] tracking-[0.2em] font-bold text-sm hover:opacity-90 transition-all duration-300 uppercase shadow-xl shadow-black/20" type="button">
+    <!-- TopAppBar -->
+    <header class="bg-[#F9F9F9]/80 backdrop-blur-xl dark:bg-[#222222]/80 fixed top-0 w-full z-50">
+        <meta charset="UTF-8">
+        <div class="flex justify-between items-center w-full px-8 py-4">
+            <button class="text-[#222222] dark:text-[#F9F9F9] hover:opacity-70 transition-opacity duration-300">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <img src="https://media.routine.vn/0x0/prod/media/52ba65a3-e085-45a6-bf5e-fb9c359abff7.webp" alt="ROUTINE"
+                class="h-4 sm:h-5 object-contain mx-auto" />
+            <button class="text-[#222222] dark:text-[#F9F9F9] hover:opacity-70 transition-opacity duration-300">
+                <span class="material-symbols-outlined">shopping_bag</span>
+            </button>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="pt-24 pb-32 px-6 md:px-20 min-h-screen">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Section -->
+            <div class="mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-[#222222] uppercase mb-4">TÍCH ĐIỂM SÀN
+                </h2>
+                <p class="text-on-surface-variant max-w-md leading-relaxed">Nhận điểm thành viên từ các đơn hàng trên
+                    sàn thương mại điện tử. Mỗi đơn hàng giúp bạn tiến gần hơn tới các ưu đãi độc quyền.</p>
+            </div>
+            <!-- Asymmetric Bento-style Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Left Side: Visual/Information Card -->
+                <div class="lg:col-span-5 hidden lg:block">
+                    <div class="sticky top-32">
+                        <div
+                            class="rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(34,34,34,0.05)] bg-surface-container-lowest h-[600px] relative">
+                            <img class="w-full h-full object-cover grayscale contrast-125 opacity-90"
+                                data-alt="Close up of high quality textured fabric with minimalist studio lighting and subtle shadows"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgrMSFsdD7BuEqBBj09siWJIVmRYi7cCUaJ7Iql0k1Wo8d7SQxkNBpor0I8ksQDxRNj8Z7UXmXqvjLD-gL7MBAzlfAQmSptgnUBGrrKe2LEkbL9VoN9UTwcQK6-MV3mNzDOULNfdl-KYjJ6KBIcyxCupn0TNzQMHJ0YWXEOIG-8S67h_bZFkx5rnm8_sdgt8ONQsRKCMuiYEkcYt5i5XIpZO7SWIryQW0WWxdlnQKDtPD_ko_g29wn6FixUgktoRnNNdKl-haL2udv" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#222222]/60 to-transparent flex flex-col justify-end p-12">
+                                <span class="text-white/70 text-xs tracking-[0.2em] mb-2 uppercase">Quyền lợi thành
+                                    viên</span>
+                                <h3 class="text-white text-2xl font-semibold leading-snug">Mọi đơn hàng đều đáng giá.
+                                    Biến phong cách thành điểm thưởng.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Side: Claim Form -->
+                <div class="lg:col-span-7">
+                    <section class="bg-surface-container-low p-8 md:p-12 rounded-xl">
+                        <form class="space-y-10">
+                            <!-- Platform Selection -->
+                            <div>
+                                <label
+                                    class="text-[10px] tracking-[1.2px] uppercase font-semibold text-on-surface-variant mb-6 block">Chọn
+                                    sàn thương mại điện tử</label>
+                                <div class="grid grid-cols-3 gap-4">
+                                    <label class="cursor-pointer">
+                                        <input checked="" class="hidden peer" name="platform" type="radio"
+                                            value="shopee" />
+                                        <div
+                                            class="border-b-2 border-transparent peer-checked:border-deep-charcoal py-3 text-center transition-all duration-300">
+                                            <span
+                                                class="text-sm tracking-widest font-medium text-on-surface-variant peer-checked:text-deep-charcoal uppercase">Shopee</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input class="hidden peer" name="platform" type="radio" value="lazada" />
+                                        <div
+                                            class="border-b-2 border-transparent peer-checked:border-deep-charcoal py-3 text-center transition-all duration-300">
+                                            <span
+                                                class="text-sm tracking-widest font-medium text-on-surface-variant peer-checked:text-deep-charcoal uppercase">Lazada</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input class="hidden peer" name="platform" type="radio" value="tiktok" />
+                                        <div
+                                            class="border-b-2 border-transparent peer-checked:border-deep-charcoal py-3 text-center transition-all duration-300">
+                                            <span
+                                                class="text-sm tracking-widest font-medium text-on-surface-variant peer-checked:text-deep-charcoal uppercase">Tiktok</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Input Fields -->
+                            <div class="space-y-8">
+                                <div class="relative">
+                                    <input
+                                        class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-4 px-0 quiet-input text-sm tracking-widest font-medium placeholder:text-on-surface-variant/40 rounded-none"
+                                        placeholder="MÃ ĐƠN HÀNG" type="text" />
+                                    <span
+                                        class="absolute right-0 top-4 material-symbols-outlined text-on-surface-variant/40 scale-75">tag</span>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="relative">
+                                        <input
+                                            class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-4 px-0 quiet-input text-sm tracking-widest font-medium placeholder:text-on-surface-variant/40 rounded-none"
+                                            placeholder="HỌ VÀ TÊN" type="text" />
+                                    </div>
+                                    <div class="relative">
+                                        <select
+                                            class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-4 px-0 quiet-input text-sm tracking-widest font-medium text-on-surface-variant/40 rounded-none appearance-none">
+                                            <option disabled="" selected="" value="">GIỚI TÍNH</option>
+                                            <option value="male">NAM</option>
+                                            <option value="female">NỮ</option>
+                                            <option value="other">KHÁC</option>
+                                        </select>
+                                        <span
+                                            class="absolute right-0 top-4 material-symbols-outlined text-on-surface-variant/40 scale-75">expand_more</span>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="relative">
+                                        <input
+                                            class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-4 px-0 quiet-input text-sm tracking-widest font-medium placeholder:text-on-surface-variant/40 rounded-none"
+                                            placeholder="ĐỊA CHỈ EMAIL" type="email" />
+                                    </div>
+                                    <div class="relative">
+                                        <input
+                                            class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-4 px-0 quiet-input text-sm tracking-widest font-medium placeholder:text-on-surface-variant/40 rounded-none"
+                                            placeholder="SỐ ĐIỆN THOẠI TÍCH ĐIỂM" type="tel" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CTA -->
+                            <div class="pt-8">
+                                <button
+                                    class="w-full bg-deep-charcoal text-white py-5 rounded-[6px] tracking-[0.2em] font-bold text-sm hover:opacity-90 transition-all duration-300 uppercase shadow-xl shadow-black/20"
+                                    type="button">
                                     GỬI YÊU CẦU
                                 </button>
-<p class="text-center text-[10px] text-on-surface-variant/50 mt-6 tracking-widest uppercase">Thời gian xác thực có thể lên đến 48 giờ làm việc.</p>
-</div>
-</form>
-</section>
-</div>
-</div>
-</div>
-</main>
-<!-- Success Toast (Simulated Interaction State) -->
-<div class="fixed bottom-32 left-1/2 -translate-x-1/2 z-[60] bg-deep-charcoal text-white px-8 py-4 rounded-full flex items-center gap-4 shadow-2xl opacity-0 translate-y-8 invisible transition-all duration-500 hover:opacity-100 hover:visible group">
-<span class="material-symbols-outlined text-[#D2A7A7]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-xs font-bold tracking-[0.1em] uppercase">Tích điểm thành công</span>
-</div>
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#F9F9F9]/90 dark:bg-neutral-900/90 backdrop-blur-xl border-t-[0.5px] border-[#222222]/10 shadow-[0_-20px_40px_rgba(34,34,34,0.05)] z-50">
-<!-- Trang chủ -->
-<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trang_ch_m_u_m_i/code.html">
-<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
-<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Trang chủ</span>
-</a>
-<!-- Danh mục -->
-<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../k_t_qu_t_m_ki_m_flat_lay/code.html">
-<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
-<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Danh mục</span>
-</a>
-<!-- Giỏ hàng -->
-<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../gi_h_ng_m_u_m_i/code.html">
-<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
-<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Giỏ hàng</span>
-</a>
-<!-- Thành viên -->
-<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html">
-<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
-<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Thành viên</span>
-</a>
-</nav>
-<!-- Side Decoration (The Curated Atelier Vibe) -->
-<div class="fixed left-8 top-1/2 -rotate-90 origin-left hidden xl:block pointer-events-none">
-<span class="text-[10px] tracking-[0.5em] text-on-surface-variant/30 font-medium uppercase italic">Elegance in every transaction</span>
-</div>
-<script src="../app.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Find all top headers/navs and attach click event to any shopping_bag icons
-    const topContainers = document.querySelectorAll('header, nav.fixed.top-0');
-    topContainers.forEach(container => {
-        const icons = container.querySelectorAll('span.material-symbols-outlined');
-        icons.forEach(icon => {
-            if (icon.textContent.trim() === 'shopping_bag') {
-                icon.style.cursor = 'pointer';
-                icon.addEventListener('click', () => {
-                    window.location.href = '../gi_h_ng_m_u_m_i/code.html';
-                });
-            }
-        });
-    });
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Color selection - toggle ring on color buttons
-    const colorContainers = document.querySelectorAll('div.flex.gap-4');
-    colorContainers.forEach(container => {
-        const colorBtns = container.querySelectorAll('button.rounded-full[class*="bg-"]');
-        if (colorBtns.length < 2) return;
-        // Check if these look like color swatches (small round buttons)
-        const isColorGroup = Array.from(colorBtns).every(b => 
-            (b.classList.contains('w-10') || b.classList.contains('w-8') || b.classList.contains('w-6')) && 
-            b.classList.contains('rounded-full') && b.textContent.trim() === ''
-        );
-        if (!isColorGroup) return;
-        
-        // Find the color label heading
-        const parentSection = container.closest('div.space-y-4') || container.parentElement;
-        const colorLabel = parentSection ? parentSection.querySelector('h3') : null;
-        
-        // Map of bg colors to color names
-        const colorNames = {
-            '#E5E2E1': 'Cream Shell', '#e5e2e1': 'Cream Shell',
-            '#2F3334': 'Charcoal', '#2f3334': 'Charcoal', 
-            '#795656': 'Rosewood', '#795656': 'Rosewood',
-            '#222222': 'Black', '#1e293b': 'Navy',
-            '#f1f5f9': 'White', '#D2A7A7': 'Dusty Rose', '#d2a7a7': 'Dusty Rose',
-            '#403f3f': 'Dark Grey', '#777b7c': 'Steel Grey',
-            '#d4a373': 'Tan', '#ccd5ae': 'Sage'
-        };
-        
-        colorBtns.forEach(btn => {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => {
-                // Remove ring from all siblings
-                colorBtns.forEach(b => {
-                    b.classList.remove('ring-2', 'ring-offset-2', 'ring-[#222222]');
-                });
-                // Add ring to clicked
-                btn.classList.add('ring-2', 'ring-offset-2', 'ring-[#222222]');
-                
-                // Update color name label
-                if (colorLabel) {
-                    const bgClass = Array.from(btn.classList).find(c => c.startsWith('bg-[#'));
-                    if (bgClass) {
-                        const hex = bgClass.match(/#[0-9a-fA-F]+/);
-                        if (hex) {
-                            const name = colorNames[hex[0]] || hex[0];
-                            const labelText = colorLabel.textContent;
-                            const prefix = labelText.includes(':') ? labelText.split(':')[0] + ': ' : 'M\u00e0u s\u1eafc: ';
-                            colorLabel.textContent = prefix + name;
-                        }
-                    }
-                }
-            });
-        });
-    });
-    
-    // Size selection - toggle active state on size buttons
-    const sizeGrids = document.querySelectorAll('div.grid.grid-cols-4');
-    sizeGrids.forEach(grid => {
-        const sizeBtns = grid.querySelectorAll('button');
-        if (sizeBtns.length < 2) return;
-        const isSizeGroup = Array.from(sizeBtns).every(b => 
-            ['S','M','L','XL','XXL','XS','2XL','28','29','30','31','32','33','34'].includes(b.textContent.trim())
-        );
-        if (!isSizeGroup) return;
-        
-        sizeBtns.forEach(btn => {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => {
-                sizeBtns.forEach(b => {
-                    b.className = 'py-4 border border-outline-variant/30 rounded-lg hover:border-[#222222] transition-all text-sm font-medium tracking-widest';
-                });
-                btn.className = 'py-4 bg-[#222222] text-white rounded-lg transition-all text-sm font-bold tracking-widest';
-            });
-        });
-    });
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // === UNIVERSAL NAVIGATION HANDLER ===
-    
-    // 1. Bottom Nav Bar - Make all nav items clickable
-    const navItems = document.querySelectorAll('nav .flex.flex-col, nav div[class*="flex-col"]');
-    navItems.forEach(item => {
-        const icon = item.querySelector('.material-symbols-outlined');
-        const label = item.querySelector('span:not(.material-symbols-outlined)');
-        if (!icon) return;
-        const iconText = icon.textContent.trim();
-        item.style.cursor = 'pointer';
-        
-        let href = null;
-        if (iconText === 'home') href = '../trang_ch_m_u_m_i/code.html';
-        else if (iconText === 'grid_view' || iconText === 'apps') href = '../k_t_qu_t_m_ki_m_flat_lay/code.html';
-        else if (iconText === 'shopping_bag') href = '../gi_h_ng_m_u_m_i/code.html';
-        else if (iconText === 'person') href = '../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html';
-        
-        if (href && !item.closest('a')) {
-            item.addEventListener('click', (e) => {
-                e.stopPropagation();
-                window.location.href = href;
-            });
-        }
-    });
-    
-    // 2. Back button (arrow_back)
-    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
-        if (icon.textContent.trim() === 'arrow_back') {
-            const btn = icon.closest('button') || icon.closest('a') || icon;
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (window.history.length > 1) window.history.back();
-                else window.location.href = '../trang_ch_m_u_m_i/code.html';
-            });
-        }
-    });
-    
-    // 3. Menu button -> Home
-    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
-        if (icon.textContent.trim() === 'menu') {
-            const btn = icon.closest('button') || icon.closest('div') || icon;
-            btn.style.cursor = 'pointer';
-            if (!btn.dataset.menuBound) {
-                btn.dataset.menuBound = 'true';
-                btn.addEventListener('click', () => {
-                    window.location.href = '../trang_ch_m_u_m_i/code.html';
-                });
-            }
-        }
-    });
-    
-    // 4. Search icon -> Category page
-    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
-        if (icon.textContent.trim() === 'search') {
-            const btn = icon.closest('button') || icon.closest('div') || icon;
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => {
-                window.location.href = '../k_t_qu_t_m_ki_m_flat_lay/code.html';
-            });
-        }
-    });
-    
-    // 5. Favorite/heart buttons
-    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
-        if (icon.textContent.trim() === 'favorite') {
-            const btn = icon.closest('button') || icon.closest('div') || icon;
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                // Toggle fill
-                const currentFill = icon.style.fontVariationSettings;
-                if (currentFill && currentFill.includes("'FILL' 1")) {
-                    icon.style.fontVariationSettings = "'FILL' 0";
-                    icon.style.color = '';
-                } else {
-                    icon.style.fontVariationSettings = "'FILL' 1";
-                    icon.style.color = '#D2A7A7';
-                }
-            });
-        }
-    });
-    
-    // 6. Button text matching - universal
-    document.querySelectorAll('button, a[class*="bg-"]').forEach(btn => {
-        const text = btn.textContent.trim().toUpperCase();
-        
-        // Skip if already has href or event
-        if (btn.tagName === 'A' && btn.getAttribute('href') && btn.getAttribute('href') !== '#') return;
-        if (btn.dataset.bound) return;
-        btn.dataset.bound = 'true';
-        
-        if (text.includes('TRA CỨU ĐIỂM') && text.includes('HẠNG THÀNH VIÊN')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../tra_c_u_i_m_v_h_ng_th_nh_vi_n/code.html'; });
-        }
-        else if (text.includes('ĐĂNG KÝ THÀNH VIÊN') || text === 'ĐĂNG KÝ') {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../ng_k_th_nh_vi_n/code.html'; });
-        }
-        else if (text.includes('ĐẶT HÀNG') && !text.includes('THÀNH CÔNG')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../t_h_ng_th_nh_c_ng_n_n_tr_ng/code.html'; });
-        }
-        else if (text.includes('ĐỔI NGAY')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../voucher_50k_th_nh_c_ng/code.html'; });
-        }
-        else if (text.includes('TIẾP TỤC MUA SẮM') || text.includes('MUA SẮM NGAY') || text.includes('VỀ TRANG CHỦ')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../trang_ch_m_u_m_i/code.html'; });
-        }
-        else if (text.includes('XEM ĐƠN HÀNG') || text.includes('CHI TIẾT ĐƠN HÀNG')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../chi_ti_t_n_h_ng_rt9921/code.html'; });
-        }
-        else if (text.includes('XEM GIỎ HÀNG')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../gi_h_ng_m_u_m_i/code.html'; });
-        }
-        else if (text.includes('ĐỔI ĐIỂM THƯỞNG') || text.includes('ĐỔI ĐIỂM')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../i_i_m_th_ng/code.html'; });
-        }
-        else if (text.includes('LỊCH SỬ ĐIỂM') || text.includes('LỊCH SỬ')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../l_ch_s_t_ch_i_m_c_p_nh_t_menu/code.html'; });
-        }
-        else if (text.includes('MEMBERSHIP') || text.includes('ĐẶC QUYỀN')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../u_i_c_a_t_i_n_n_tr_ng/code.html'; });
-        }
-        else if (text.includes('YÊU THÍCH') && !text.includes('SẢN PHẨM')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../s_n_ph_m_y_u_th_ch_n_n_tr_ng/code.html'; });
-        }
-        else if (text.includes('HƯỚNG DẪN') && text.includes('SHOPEE')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../h_ng_d_n_l_y_m_shopee_c_p_nh_t_icon/code.html'; });
-        }
-        else if (text.includes('SỬ DỤNG VOUCHER') || text.includes('DÙNG NGAY')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../gi_h_ng_m_u_m_i/code.html'; });
-        }
-        else if (text.includes('NHẬN VOUCHER')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../nh_n_voucher_th_nh_c_ng/code.html'; });
-        }
-        else if (text.includes('XÁC NHẬN')) {
-            btn.style.cursor = 'pointer';
-            btn.addEventListener('click', () => { window.location.href = '../ng_k_th_nh_c_ng_n_n_tr_ng/code.html'; });
-        }
-    });
-    
-    // 7. Clickable list items (sections with chevron_right)
-    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
-        if (icon.textContent.trim() === 'chevron_right') {
-            const row = icon.closest('div[class*="flex"]') || icon.closest('a') || icon.closest('section');
-            if (!row || row.dataset.chevBound) return;
-            row.dataset.chevBound = 'true';
-            row.style.cursor = 'pointer';
-            
-            const rowText = row.textContent.toUpperCase();
-            if (rowText.includes('MEMBERSHIP') || rowText.includes('ĐẶC QUYỀN')) {
-                row.addEventListener('click', () => { window.location.href = '../u_i_c_a_t_i_n_n_tr_ng/code.html'; });
-            }
-            else if (rowText.includes('LỊCH SỬ ĐIỂM') || rowText.includes('BIẾN ĐỘNG')) {
-                row.addEventListener('click', () => { window.location.href = '../l_ch_s_t_ch_i_m_c_p_nh_t_menu/code.html'; });
-            }
-            else if (rowText.includes('ĐỔI ĐIỂM') || rowText.includes('VOUCHER')) {
-                row.addEventListener('click', () => { window.location.href = '../i_i_m_th_ng/code.html'; });
-            }
-            else if (rowText.includes('ĐƠN HÀNG') || rowText.includes('THEO DÕI')) {
-                row.addEventListener('click', () => { window.location.href = '../chi_ti_t_n_h_ng_rt9921/code.html'; });
-            }
-            else if (rowText.includes('HƯỚNG DẪN') || rowText.includes('SHOPEE')) {
-                row.addEventListener('click', () => { window.location.href = '../h_ng_d_n_l_y_m_shopee_c_p_nh_t_icon/code.html'; });
-            }
-            else if (rowText.includes('YÊU THÍCH')) {
-                row.addEventListener('click', () => { window.location.href = '../s_n_ph_m_y_u_th_ch_n_n_tr_ng/code.html'; });
-            }
-        }
-    });
-    
-    // 8. "Xóa tất cả" in cart
-    document.querySelectorAll('button').forEach(btn => {
-        const txt = btn.textContent.trim();
-        if (txt.includes('Xóa tất cả') || txt.includes('XÓA TẤT CẢ')) {
-            btn.style.cursor = 'pointer';
-            if (!btn.dataset.clearBound) {
-                btn.dataset.clearBound = 'true';
-                btn.addEventListener('click', () => {
-                    const container = document.querySelector('section.space-y-6 > div.space-y-4') || 
-                                     document.querySelector('.space-y-4');
-                    if (container) {
-                        const items = container.querySelectorAll('[class*="bg-surface-container-lowest"]');
-                        items.forEach((item, i) => {
-                            setTimeout(() => {
-                                item.style.transition = 'all 0.3s ease';
-                                item.style.opacity = '0';
-                                item.style.transform = 'translateX(-100%)';
-                                setTimeout(() => { item.remove(); }, 300);
-                            }, i * 100);
+                                <p
+                                    class="text-center text-[10px] text-on-surface-variant/50 mt-6 tracking-widest uppercase">
+                                    Thời gian xác thực có thể lên đến 48 giờ làm việc.</p>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Success Toast (Simulated Interaction State) -->
+    <div
+        class="fixed bottom-32 left-1/2 -translate-x-1/2 z-[60] bg-deep-charcoal text-white px-8 py-4 rounded-full flex items-center gap-4 shadow-2xl opacity-0 translate-y-8 invisible transition-all duration-500 hover:opacity-100 hover:visible group">
+        <span class="material-symbols-outlined text-[#D2A7A7]"
+            style="font-variation-settings: 'FILL' 1;">check_circle</span>
+        <span class="text-xs font-bold tracking-[0.1em] uppercase">Tích điểm thành công</span>
+    </div>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#F9F9F9]/90 dark:bg-neutral-900/90 backdrop-blur-xl border-t-[0.5px] border-[#222222]/10 shadow-[0_-20px_40px_rgba(34,34,34,0.05)] z-50">
+        <!-- Trang chủ -->
+        <a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100"
+            href="../trang_ch_m_u_m_i/code.html">
+            <span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+            <span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Trang chủ</span>
+        </a>
+        <!-- Danh mục -->
+        <a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100"
+            href="../k_t_qu_t_m_ki_m_flat_lay/code.html">
+            <span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+            <span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Danh mục</span>
+        </a>
+        <!-- Giỏ hàng -->
+        <a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100"
+            href="../gi_h_ng_m_u_m_i/code.html">
+            <span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+            <span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Giỏ hàng</span>
+        </a>
+        <!-- Thành viên -->
+        <a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100"
+            href="../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html">
+            <span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+            <span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Thành viên</span>
+        </a>
+    </nav>
+    <!-- Side Decoration (The Curated Atelier Vibe) -->
+    <div class="fixed left-8 top-1/2 -rotate-90 origin-left hidden xl:block pointer-events-none">
+        <span class="text-[10px] tracking-[0.5em] text-on-surface-variant/30 font-medium uppercase italic">Elegance in
+            every transaction</span>
+    </div>
+    <script src="../app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Find all top headers/navs and attach click event to any shopping_bag icons
+            const topContainers = document.querySelectorAll('header, nav.fixed.top-0');
+            topContainers.forEach(container => {
+                const icons = container.querySelectorAll('span.material-symbols-outlined');
+                icons.forEach(icon => {
+                    if (icon.textContent.trim() === 'shopping_bag') {
+                        icon.style.cursor = 'pointer';
+                        icon.addEventListener('click', () => {
+                            window.location.href = '../gi_h_ng_m_u_m_i/code.html';
                         });
                     }
                 });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Color selection - toggle ring on color buttons
+            const colorContainers = document.querySelectorAll('div.flex.gap-4');
+            colorContainers.forEach(container => {
+                const colorBtns = container.querySelectorAll('button.rounded-full[class*="bg-"]');
+                if (colorBtns.length < 2) return;
+                // Check if these look like color swatches (small round buttons)
+                const isColorGroup = Array.from(colorBtns).every(b =>
+                    (b.classList.contains('w-10') || b.classList.contains('w-8') || b.classList.contains('w-6')) &&
+                    b.classList.contains('rounded-full') && b.textContent.trim() === ''
+                );
+                if (!isColorGroup) return;
+
+                // Find the color label heading
+                const parentSection = container.closest('div.space-y-4') || container.parentElement;
+                const colorLabel = parentSection ? parentSection.querySelector('h3') : null;
+
+                // Map of bg colors to color names
+                const colorNames = {
+                    '#E5E2E1': 'Cream Shell', '#e5e2e1': 'Cream Shell',
+                    '#2F3334': 'Charcoal', '#2f3334': 'Charcoal',
+                    '#795656': 'Rosewood', '#795656': 'Rosewood',
+                    '#222222': 'Black', '#1e293b': 'Navy',
+                    '#f1f5f9': 'White', '#D2A7A7': 'Dusty Rose', '#d2a7a7': 'Dusty Rose',
+                    '#403f3f': 'Dark Grey', '#777b7c': 'Steel Grey',
+                    '#d4a373': 'Tan', '#ccd5ae': 'Sage'
+                };
+
+                colorBtns.forEach(btn => {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => {
+                        // Remove ring from all siblings
+                        colorBtns.forEach(b => {
+                            b.classList.remove('ring-2', 'ring-offset-2', 'ring-[#222222]');
+                        });
+                        // Add ring to clicked
+                        btn.classList.add('ring-2', 'ring-offset-2', 'ring-[#222222]');
+
+                        // Update color name label
+                        if (colorLabel) {
+                            const bgClass = Array.from(btn.classList).find(c => c.startsWith('bg-[#'));
+                            if (bgClass) {
+                                const hex = bgClass.match(/#[0-9a-fA-F]+/);
+                                if (hex) {
+                                    const name = colorNames[hex[0]] || hex[0];
+                                    const labelText = colorLabel.textContent;
+                                    const prefix = labelText.includes(':') ? labelText.split(':')[0] + ': ' : 'M\u00e0u s\u1eafc: ';
+                                    colorLabel.textContent = prefix + name;
+                                }
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Size selection - toggle active state on size buttons
+            const sizeGrids = document.querySelectorAll('div.grid.grid-cols-4');
+            sizeGrids.forEach(grid => {
+                const sizeBtns = grid.querySelectorAll('button');
+                if (sizeBtns.length < 2) return;
+                const isSizeGroup = Array.from(sizeBtns).every(b =>
+                    ['S', 'M', 'L', 'XL', 'XXL', 'XS', '2XL', '28', '29', '30', '31', '32', '33', '34'].includes(b.textContent.trim())
+                );
+                if (!isSizeGroup) return;
+
+                sizeBtns.forEach(btn => {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => {
+                        sizeBtns.forEach(b => {
+                            b.className = 'py-4 border border-outline-variant/30 rounded-lg hover:border-[#222222] transition-all text-sm font-medium tracking-widest';
+                        });
+                        btn.className = 'py-4 bg-[#222222] text-white rounded-lg transition-all text-sm font-bold tracking-widest';
+                    });
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // === UNIVERSAL NAVIGATION HANDLER ===
+
+            // 1. Bottom Nav Bar - Make all nav items clickable
+            const navItems = document.querySelectorAll('nav .flex.flex-col, nav div[class*="flex-col"]');
+            navItems.forEach(item => {
+                const icon = item.querySelector('.material-symbols-outlined');
+                const label = item.querySelector('span:not(.material-symbols-outlined)');
+                if (!icon) return;
+                const iconText = icon.textContent.trim();
+                item.style.cursor = 'pointer';
+
+                let href = null;
+                if (iconText === 'home') href = '../trang_ch_m_u_m_i/code.html';
+                else if (iconText === 'grid_view' || iconText === 'apps') href = '../k_t_qu_t_m_ki_m_flat_lay/code.html';
+                else if (iconText === 'shopping_bag') href = '../gi_h_ng_m_u_m_i/code.html';
+                else if (iconText === 'person') href = '../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html';
+
+                if (href && !item.closest('a')) {
+                    item.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        window.location.href = href;
+                    });
+                }
+            });
+
+            // 2. Back button (arrow_back)
+            document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+                if (icon.textContent.trim() === 'arrow_back') {
+                    const btn = icon.closest('button') || icon.closest('a') || icon;
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (window.history.length > 1) window.history.back();
+                        else window.location.href = '../trang_ch_m_u_m_i/code.html';
+                    });
+                }
+            });
+
+            // 3. Menu button -> Home
+            document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+                if (icon.textContent.trim() === 'menu') {
+                    const btn = icon.closest('button') || icon.closest('div') || icon;
+                    btn.style.cursor = 'pointer';
+                    if (!btn.dataset.menuBound) {
+                        btn.dataset.menuBound = 'true';
+                        btn.addEventListener('click', () => {
+                            window.location.href = '../trang_ch_m_u_m_i/code.html';
+                        });
+                    }
+                }
+            });
+
+            // 4. Search icon -> Category page
+            document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+                if (icon.textContent.trim() === 'search') {
+                    const btn = icon.closest('button') || icon.closest('div') || icon;
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => {
+                        window.location.href = '../k_t_qu_t_m_ki_m_flat_lay/code.html';
+                    });
+                }
+            });
+
+            // 5. Favorite/heart buttons
+            document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+                if (icon.textContent.trim() === 'favorite') {
+                    const btn = icon.closest('button') || icon.closest('div') || icon;
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        // Toggle fill
+                        const currentFill = icon.style.fontVariationSettings;
+                        if (currentFill && currentFill.includes("'FILL' 1")) {
+                            icon.style.fontVariationSettings = "'FILL' 0";
+                            icon.style.color = '';
+                        } else {
+                            icon.style.fontVariationSettings = "'FILL' 1";
+                            icon.style.color = '#D2A7A7';
+                        }
+                    });
+                }
+            });
+
+            // 6. Button text matching - universal
+            document.querySelectorAll('button, a[class*="bg-"]').forEach(btn => {
+                const text = btn.textContent.trim().toUpperCase();
+
+                // Skip if already has href or event
+                if (btn.tagName === 'A' && btn.getAttribute('href') && btn.getAttribute('href') !== '#') return;
+                if (btn.dataset.bound) return;
+                btn.dataset.bound = 'true';
+
+                if (text.includes('TRA CỨU ĐIỂM') && text.includes('HẠNG THÀNH VIÊN')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../tra_c_u_i_m_v_h_ng_th_nh_vi_n/code.html'; });
+                }
+                else if (text.includes('ĐĂNG KÝ THÀNH VIÊN') || text === 'ĐĂNG KÝ') {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../ng_k_th_nh_vi_n/code.html'; });
+                }
+                else if (text.includes('ĐẶT HÀNG') && !text.includes('THÀNH CÔNG')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../t_h_ng_th_nh_c_ng_n_n_tr_ng/code.html'; });
+                }
+                else if (text.includes('ĐỔI NGAY')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../voucher_50k_th_nh_c_ng/code.html'; });
+                }
+                else if (text.includes('TIẾP TỤC MUA SẮM') || text.includes('MUA SẮM NGAY') || text.includes('VỀ TRANG CHỦ')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../trang_ch_m_u_m_i/code.html'; });
+                }
+                else if (text.includes('XEM ĐƠN HÀNG') || text.includes('CHI TIẾT ĐƠN HÀNG')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../chi_ti_t_n_h_ng_rt9921/code.html'; });
+                }
+                else if (text.includes('XEM GIỎ HÀNG')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../gi_h_ng_m_u_m_i/code.html'; });
+                }
+                else if (text.includes('ĐỔI ĐIỂM THƯỞNG') || text.includes('ĐỔI ĐIỂM')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../i_i_m_th_ng/code.html'; });
+                }
+                else if (text.includes('LỊCH SỬ ĐIỂM') || text.includes('LỊCH SỬ')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../l_ch_s_t_ch_i_m_c_p_nh_t_menu/code.html'; });
+                }
+                else if (text.includes('MEMBERSHIP') || text.includes('ĐẶC QUYỀN')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../u_i_c_a_t_i_n_n_tr_ng/code.html'; });
+                }
+                else if (text.includes('YÊU THÍCH') && !text.includes('SẢN PHẨM')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../s_n_ph_m_y_u_th_ch_n_n_tr_ng/code.html'; });
+                }
+                else if (text.includes('HƯỚNG DẪN') && text.includes('SHOPEE')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../h_ng_d_n_l_y_m_shopee_c_p_nh_t_icon/code.html'; });
+                }
+                else if (text.includes('SỬ DỤNG VOUCHER') || text.includes('DÙNG NGAY')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../gi_h_ng_m_u_m_i/code.html'; });
+                }
+                else if (text.includes('NHẬN VOUCHER')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../nh_n_voucher_th_nh_c_ng/code.html'; });
+                }
+                else if (text.includes('XÁC NHẬN')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', () => { window.location.href = '../ng_k_th_nh_c_ng_n_n_tr_ng/code.html'; });
+                }
+            });
+
+            // 7. Clickable list items (sections with chevron_right)
+            document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+                if (icon.textContent.trim() === 'chevron_right') {
+                    const row = icon.closest('div[class*="flex"]') || icon.closest('a') || icon.closest('section');
+                    if (!row || row.dataset.chevBound) return;
+                    row.dataset.chevBound = 'true';
+                    row.style.cursor = 'pointer';
+
+                    const rowText = row.textContent.toUpperCase();
+                    if (rowText.includes('MEMBERSHIP') || rowText.includes('ĐẶC QUYỀN')) {
+                        row.addEventListener('click', () => { window.location.href = '../u_i_c_a_t_i_n_n_tr_ng/code.html'; });
+                    }
+                    else if (rowText.includes('LỊCH SỬ ĐIỂM') || rowText.includes('BIẾN ĐỘNG')) {
+                        row.addEventListener('click', () => { window.location.href = '../l_ch_s_t_ch_i_m_c_p_nh_t_menu/code.html'; });
+                    }
+                    else if (rowText.includes('ĐỔI ĐIỂM') || rowText.includes('VOUCHER')) {
+                        row.addEventListener('click', () => { window.location.href = '../i_i_m_th_ng/code.html'; });
+                    }
+                    else if (rowText.includes('ĐƠN HÀNG') || rowText.includes('THEO DÕI')) {
+                        row.addEventListener('click', () => { window.location.href = '../chi_ti_t_n_h_ng_rt9921/code.html'; });
+                    }
+                    else if (rowText.includes('HƯỚNG DẪN') || rowText.includes('SHOPEE')) {
+                        row.addEventListener('click', () => { window.location.href = '../h_ng_d_n_l_y_m_shopee_c_p_nh_t_icon/code.html'; });
+                    }
+                    else if (rowText.includes('YÊU THÍCH')) {
+                        row.addEventListener('click', () => { window.location.href = '../s_n_ph_m_y_u_th_ch_n_n_tr_ng/code.html'; });
+                    }
+                }
+            });
+
+            // 8. "Xóa tất cả" in cart
+            document.querySelectorAll('button').forEach(btn => {
+                const txt = btn.textContent.trim();
+                if (txt.includes('Xóa tất cả') || txt.includes('XÓA TẤT CẢ')) {
+                    btn.style.cursor = 'pointer';
+                    if (!btn.dataset.clearBound) {
+                        btn.dataset.clearBound = 'true';
+                        btn.addEventListener('click', () => {
+                            const container = document.querySelector('section.space-y-6 > div.space-y-4') ||
+                                document.querySelector('.space-y-4');
+                            if (container) {
+                                const items = container.querySelectorAll('[class*="bg-surface-container-lowest"]');
+                                items.forEach((item, i) => {
+                                    setTimeout(() => {
+                                        item.style.transition = 'all 0.3s ease';
+                                        item.style.opacity = '0';
+                                        item.style.transform = 'translateX(-100%)';
+                                        setTimeout(() => { item.remove(); }, 300);
+                                    }, i * 100);
+                                });
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+        if (icon.textContent.trim() === 'arrow_back') {
+            const btn = icon.closest('button') || icon.closest('div');
+            if (btn) {
+                // Remove previous listeners by cloning
+                const newBtn = btn.cloneNode(true);
+                btn.parentNode.replaceChild(newBtn, btn);
+                newBtn.style.cursor = 'pointer';
+                newBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.href = '../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html';
+                });
             }
         }
     });
 });
 </script>
-</body></html>
+</body>
+
+</html>
