@@ -382,4 +382,217 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // === UNIVERSAL NAVIGATION HANDLER ===
+    
+    // 1. Bottom Nav Bar - Make all nav items clickable
+    const navItems = document.querySelectorAll('nav .flex.flex-col, nav div[class*="flex-col"]');
+    navItems.forEach(item => {
+        const icon = item.querySelector('.material-symbols-outlined');
+        const label = item.querySelector('span:not(.material-symbols-outlined)');
+        if (!icon) return;
+        const iconText = icon.textContent.trim();
+        item.style.cursor = 'pointer';
+        
+        let href = null;
+        if (iconText === 'home') href = '../trang_ch_m_u_m_i/code.html';
+        else if (iconText === 'grid_view' || iconText === 'apps') href = '../k_t_qu_t_m_ki_m_flat_lay/code.html';
+        else if (iconText === 'shopping_bag') href = '../gi_h_ng_m_u_m_i/code.html';
+        else if (iconText === 'person') href = '../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html';
+        
+        if (href && !item.closest('a')) {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                window.location.href = href;
+            });
+        }
+    });
+    
+    // 2. Back button (arrow_back)
+    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+        if (icon.textContent.trim() === 'arrow_back') {
+            const btn = icon.closest('button') || icon.closest('a') || icon;
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (window.history.length > 1) window.history.back();
+                else window.location.href = '../trang_ch_m_u_m_i/code.html';
+            });
+        }
+    });
+    
+    // 3. Menu button -> Home
+    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+        if (icon.textContent.trim() === 'menu') {
+            const btn = icon.closest('button') || icon.closest('div') || icon;
+            btn.style.cursor = 'pointer';
+            if (!btn.dataset.menuBound) {
+                btn.dataset.menuBound = 'true';
+                btn.addEventListener('click', () => {
+                    window.location.href = '../trang_ch_m_u_m_i/code.html';
+                });
+            }
+        }
+    });
+    
+    // 4. Search icon -> Category page
+    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+        if (icon.textContent.trim() === 'search') {
+            const btn = icon.closest('button') || icon.closest('div') || icon;
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => {
+                window.location.href = '../k_t_qu_t_m_ki_m_flat_lay/code.html';
+            });
+        }
+    });
+    
+    // 5. Favorite/heart buttons
+    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+        if (icon.textContent.trim() === 'favorite') {
+            const btn = icon.closest('button') || icon.closest('div') || icon;
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Toggle fill
+                const currentFill = icon.style.fontVariationSettings;
+                if (currentFill && currentFill.includes("'FILL' 1")) {
+                    icon.style.fontVariationSettings = "'FILL' 0";
+                    icon.style.color = '';
+                } else {
+                    icon.style.fontVariationSettings = "'FILL' 1";
+                    icon.style.color = '#D2A7A7';
+                }
+            });
+        }
+    });
+    
+    // 6. Button text matching - universal
+    document.querySelectorAll('button, a[class*="bg-"]').forEach(btn => {
+        const text = btn.textContent.trim().toUpperCase();
+        
+        // Skip if already has href or event
+        if (btn.tagName === 'A' && btn.getAttribute('href') && btn.getAttribute('href') !== '#') return;
+        if (btn.dataset.bound) return;
+        btn.dataset.bound = 'true';
+        
+        if (text.includes('TRA CỨU ĐIỂM') && text.includes('HẠNG THÀNH VIÊN')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../tra_c_u_i_m_v_h_ng_th_nh_vi_n/code.html'; });
+        }
+        else if (text.includes('ĐĂNG KÝ THÀNH VIÊN') || text === 'ĐĂNG KÝ') {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../ng_k_th_nh_vi_n/code.html'; });
+        }
+        else if (text.includes('ĐẶT HÀNG') && !text.includes('THÀNH CÔNG')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../t_h_ng_th_nh_c_ng_n_n_tr_ng/code.html'; });
+        }
+        else if (text.includes('ĐỔI NGAY')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../voucher_50k_th_nh_c_ng/code.html'; });
+        }
+        else if (text.includes('TIẾP TỤC MUA SẮM') || text.includes('MUA SẮM NGAY') || text.includes('VỀ TRANG CHỦ')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../trang_ch_m_u_m_i/code.html'; });
+        }
+        else if (text.includes('XEM ĐƠN HÀNG') || text.includes('CHI TIẾT ĐƠN HÀNG')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../chi_ti_t_n_h_ng_rt9921/code.html'; });
+        }
+        else if (text.includes('XEM GIỎ HÀNG')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../gi_h_ng_m_u_m_i/code.html'; });
+        }
+        else if (text.includes('ĐỔI ĐIỂM THƯỞNG') || text.includes('ĐỔI ĐIỂM')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../i_i_m_th_ng/code.html'; });
+        }
+        else if (text.includes('LỊCH SỬ ĐIỂM') || text.includes('LỊCH SỬ')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../l_ch_s_t_ch_i_m_c_p_nh_t_menu/code.html'; });
+        }
+        else if (text.includes('MEMBERSHIP') || text.includes('ĐẶC QUYỀN')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../u_i_c_a_t_i_n_n_tr_ng/code.html'; });
+        }
+        else if (text.includes('YÊU THÍCH') && !text.includes('SẢN PHẨM')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../s_n_ph_m_y_u_th_ch_n_n_tr_ng/code.html'; });
+        }
+        else if (text.includes('HƯỚNG DẪN') && text.includes('SHOPEE')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../h_ng_d_n_l_y_m_shopee_c_p_nh_t_icon/code.html'; });
+        }
+        else if (text.includes('SỬ DỤNG VOUCHER') || text.includes('DÙNG NGAY')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../gi_h_ng_m_u_m_i/code.html'; });
+        }
+        else if (text.includes('NHẬN VOUCHER')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../nh_n_voucher_th_nh_c_ng/code.html'; });
+        }
+        else if (text.includes('XÁC NHẬN')) {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => { window.location.href = '../ng_k_th_nh_c_ng_n_n_tr_ng/code.html'; });
+        }
+    });
+    
+    // 7. Clickable list items (sections with chevron_right)
+    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+        if (icon.textContent.trim() === 'chevron_right') {
+            const row = icon.closest('div[class*="flex"]') || icon.closest('a') || icon.closest('section');
+            if (!row || row.dataset.chevBound) return;
+            row.dataset.chevBound = 'true';
+            row.style.cursor = 'pointer';
+            
+            const rowText = row.textContent.toUpperCase();
+            if (rowText.includes('MEMBERSHIP') || rowText.includes('ĐẶC QUYỀN')) {
+                row.addEventListener('click', () => { window.location.href = '../u_i_c_a_t_i_n_n_tr_ng/code.html'; });
+            }
+            else if (rowText.includes('LỊCH SỬ ĐIỂM') || rowText.includes('BIẾN ĐỘNG')) {
+                row.addEventListener('click', () => { window.location.href = '../l_ch_s_t_ch_i_m_c_p_nh_t_menu/code.html'; });
+            }
+            else if (rowText.includes('ĐỔI ĐIỂM') || rowText.includes('VOUCHER')) {
+                row.addEventListener('click', () => { window.location.href = '../i_i_m_th_ng/code.html'; });
+            }
+            else if (rowText.includes('ĐƠN HÀNG') || rowText.includes('THEO DÕI')) {
+                row.addEventListener('click', () => { window.location.href = '../chi_ti_t_n_h_ng_rt9921/code.html'; });
+            }
+            else if (rowText.includes('HƯỚNG DẪN') || rowText.includes('SHOPEE')) {
+                row.addEventListener('click', () => { window.location.href = '../h_ng_d_n_l_y_m_shopee_c_p_nh_t_icon/code.html'; });
+            }
+            else if (rowText.includes('YÊU THÍCH')) {
+                row.addEventListener('click', () => { window.location.href = '../s_n_ph_m_y_u_th_ch_n_n_tr_ng/code.html'; });
+            }
+        }
+    });
+    
+    // 8. "Xóa tất cả" in cart
+    document.querySelectorAll('button').forEach(btn => {
+        const txt = btn.textContent.trim();
+        if (txt.includes('Xóa tất cả') || txt.includes('XÓA TẤT CẢ')) {
+            btn.style.cursor = 'pointer';
+            if (!btn.dataset.clearBound) {
+                btn.dataset.clearBound = 'true';
+                btn.addEventListener('click', () => {
+                    const container = document.querySelector('section.space-y-6 > div.space-y-4') || 
+                                     document.querySelector('.space-y-4');
+                    if (container) {
+                        const items = container.querySelectorAll('[class*="bg-surface-container-lowest"]');
+                        items.forEach((item, i) => {
+                            setTimeout(() => {
+                                item.style.transition = 'all 0.3s ease';
+                                item.style.opacity = '0';
+                                item.style.transform = 'translateX(-100%)';
+                                setTimeout(() => { item.remove(); }, 300);
+                            }, i * 100);
+                        });
+                    }
+                });
+            }
+        }
+    });
+});
+</script>
 </body></html> 
