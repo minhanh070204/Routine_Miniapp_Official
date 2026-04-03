@@ -313,6 +313,15 @@
 <script src="../app.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Support button logic
+    document.querySelectorAll('button').forEach(btn => {
+        if (btn.textContent.trim().includes('YÊU CẦU HỖ TRỢ') && !btn.dataset.supportBound) {
+            btn.dataset.supportBound = 'true';
+            btn.addEventListener('click', () => {
+                alert('Yêu cầu hỗ trợ đã được gửi. Nhân viên Chăm sóc khách hàng sẽ liên hệ với bạn trong vòng 24h.');
+            });
+        }
+    });
     // Find all top headers/navs and attach click event to any shopping_bag icons
     const topContainers = document.querySelectorAll('header, nav.fixed.top-0');
     topContainers.forEach(container => {
@@ -330,6 +339,15 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Support button logic
+    document.querySelectorAll('button').forEach(btn => {
+        if (btn.textContent.trim().includes('YÊU CẦU HỖ TRỢ') && !btn.dataset.supportBound) {
+            btn.dataset.supportBound = 'true';
+            btn.addEventListener('click', () => {
+                alert('Yêu cầu hỗ trợ đã được gửi. Nhân viên Chăm sóc khách hàng sẽ liên hệ với bạn trong vòng 24h.');
+            });
+        }
+    });
     // Color selection - toggle ring on color buttons
     const colorContainers = document.querySelectorAll('div.flex.gap-4');
     colorContainers.forEach(container => {
@@ -408,6 +426,15 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Support button logic
+    document.querySelectorAll('button').forEach(btn => {
+        if (btn.textContent.trim().includes('YÊU CẦU HỖ TRỢ') && !btn.dataset.supportBound) {
+            btn.dataset.supportBound = 'true';
+            btn.addEventListener('click', () => {
+                alert('Yêu cầu hỗ trợ đã được gửi. Nhân viên Chăm sóc khách hàng sẽ liên hệ với bạn trong vòng 24h.');
+            });
+        }
+    });
     // === UNIVERSAL NAVIGATION HANDLER ===
     
     // 1. Bottom Nav Bar - Make all nav items clickable

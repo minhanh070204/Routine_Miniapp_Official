@@ -616,4 +616,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Parse URL params
+    const params = new URLSearchParams(window.location.search);
+    const pName = params.get('name');
+    const pPrice = params.get('price');
+    const pImg = params.get('img');
+    
+    if (pName) {
+        const titleEl = document.querySelector('h1.text-2xl');
+        if (titleEl) titleEl.textContent = pName;
+        // Update breadcrumb
+        const breadcrumbs = document.querySelectorAll('div.flex.items-center.gap-2.text-xs.font-medium span');
+        if (breadcrumbs.length > 2) {
+            breadcrumbs[breadcrumbs.length - 1].textContent = pName;
+        }
+    }
+    
+    if (pPrice) {
+        const priceEl = document.querySelector('div.flex.items-baseline.gap-3 p.text-2xl');
+        if (priceEl) priceEl.textContent = pPrice;
+    }
+    
+    if (pImg) {
+        const mainImg = document.querySelector('div.relative.aspect-\\[3\\/4\\] img');
+        if (mainImg) {
+            mainImg.src = pImg;
+            mainImg.alt = pName || 'Product Image';
+        }
+    }
+});
+</script>
 </body></html>
