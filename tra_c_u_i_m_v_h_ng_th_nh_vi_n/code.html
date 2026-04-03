@@ -1,0 +1,296 @@
+﻿<<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#f7c9c9",
+                    "secondary-container": "#ffdad9",
+                    "inverse-surface": "#0c0f0f",
+                    "tertiary": "#7a5272",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary-container": "#ecbadf",
+                    "on-secondary-fixed-variant": "#755353",
+                    "error-container": "#fd795a",
+                    "on-surface-variant": "#5b6061",
+                    "tertiary-dim": "#6d4665",
+                    "primary": "#605f5f",
+                    "on-secondary": "#fff7f6",
+                    "inverse-on-surface": "#9c9d9d",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-dim": "#535353",
+                    "primary-fixed": "#e5e2e1",
+                    "error": "#a73b21",
+                    "error-dim": "#791903",
+                    "tertiary-fixed-dim": "#deadd1",
+                    "on-primary-fixed-variant": "#5c5b5b",
+                    "on-tertiary-fixed": "#44223f",
+                    "tertiary-fixed": "#ecbadf",
+                    "surface-container": "#eceeef",
+                    "surface-container-low": "#f2f4f4",
+                    "surface-container-high": "#e6e9e9",
+                    "on-primary-container": "#525151",
+                    "inverse-primary": "#ffffff",
+                    "primary-fixed-dim": "#d6d4d3",
+                    "surface-dim": "#d7dbdb",
+                    "surface-variant": "#dfe3e4",
+                    "on-tertiary": "#fff7f9",
+                    "surface": "#f9f9f9",
+                    "secondary-dim": "#6c4a4b",
+                    "secondary": "#795656",
+                    "surface-tint": "#605f5f",
+                    "secondary-fixed": "#ffdad9",
+                    "on-surface": "#2f3334",
+                    "outline": "#777b7c",
+                    "background": "#f9f9f9",
+                    "on-error": "#fff7f6",
+                    "on-tertiary-fixed-variant": "#643e5d",
+                    "on-tertiary-container": "#5a3654",
+                    "on-primary": "#fbf8f8",
+                    "on-primary-fixed": "#403f3f",
+                    "on-secondary-container": "#6a4949",
+                    "surface-container-highest": "#dfe3e4",
+                    "primary-container": "#e5e2e1",
+                    "on-background": "#2f3334",
+                    "outline-variant": "#afb3b3",
+                    "on-secondary-fixed": "#563738",
+                    "on-error-container": "#6e1400"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F9F9F9; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .luxury-shadow { box-shadow: 0 20px 40px rgba(34, 34, 34, 0.05); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style>
+    /* Styling according to user requirement */
+    button:not(.rounded-full):not([class*="rounded-full"]), 
+    a:not(.rounded-full)[class*="bg-[#222222]"], 
+    a:not(.rounded-full)[class*="bg-black"],
+    .card-rounded:not(.rounded-full) {
+        border-radius: 8px !important;
+    }
+</style>
+<style>
+    /* Absolute perfect centering for the Routine logo */
+    nav, header { position: relative; }
+    nav img[alt="ROUTINE"], header img[alt="ROUTINE"] {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+        height: 32px !important; max-height: 100% !important;
+        z-index: 10 !important;
+    }
+    nav a:has(img[alt="ROUTINE"]), header a:has(img[alt="ROUTINE"]) {
+        position: static !important;
+        display: block !important;
+        flex-grow: 0 !important;
+    }
+</style>
+</head>
+<body class="bg-surface text-on-surface mb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#F9F9F9] dark:bg-stone-950 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-8 h-16 w-full max-w-7xl mx-auto">
+<button class="text-[#222222] dark:text-stone-100 hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<img src="https://media.routine.vn/0x0/prod/media/52ba65a3-e085-45a6-bf5e-fb9c359abff7.webp" alt="ROUTINE" class="h-4 sm:h-5 object-contain mx-auto" />
+<button class="text-[#222222] dark:text-stone-100 hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<main class="pt-24 max-w-7xl mx-auto px-6 md:px-20">
+<!-- Title Section -->
+<section class="mb-12">
+<h2 class="text-3xl md:text-5xl font-extrabold tracking-[1.2px] text-[#222222] uppercase">HẠNG THÀNH VIÊN</h2>
+<p class="mt-4 text-on-surface-variant font-light leading-relaxed max-w-lg">Khám phá các đặc quyền dành riêng cho khách hàng thân thiết của Routine. Nâng cấp hạng để nhận thêm nhiều ưu đãi tinh tế.</p>
+</section>
+<!-- Tier Carousel -->
+<section class="mb-20 overflow-x-auto no-scrollbar flex space-x-6 pb-8 snap-x">
+<!-- SILVER -->
+<div class="flex-shrink-0 w-[280px] md:w-[320px] aspect-[3/4] rounded-[14px] bg-surface-variant p-8 flex flex-col justify-between snap-center luxury-shadow border border-white/20">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl opacity-40" data-icon="workspace_premium">workspace_premium</span>
+<span class="text-[10px] tracking-[1.2px] font-bold text-outline uppercase">Level 1</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold tracking-[1.2px] text-[#222222] mb-2 uppercase">SILVER</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">Khởi đầu hành trình phong cách cùng Routine với các quyền lợi cơ bản.</p>
+</div>
+</div>
+<!-- GOLD (Active) -->
+<div class="flex-shrink-0 w-[280px] md:w-[320px] aspect-[3/4] rounded-[14px] bg-[#D2A7A7] p-8 flex flex-col justify-between snap-center luxury-shadow relative overflow-hidden ring-4 ring-[#D2A7A7]/20">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-white" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] tracking-[1.2px] font-bold text-white uppercase">Hạng hiện tại</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold tracking-[1.2px] text-white mb-2 uppercase">GOLD</h3>
+<div class="w-full bg-white/30 h-[2px] mb-4">
+<div class="bg-white h-full w-[65%]"></div>
+</div>
+<p class="text-[10px] text-white/80 font-medium tracking-[0.5px]">Cần 2,500,000đ để lên PLATINUM</p>
+</div>
+</div>
+<!-- PLATINUM -->
+<div class="flex-shrink-0 w-[280px] md:w-[320px] aspect-[3/4] rounded-[14px] bg-[#333333] p-8 flex flex-col justify-between snap-center luxury-shadow">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-white/50" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="text-[10px] tracking-[1.2px] font-bold text-white/30 uppercase">Level 3</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold tracking-[1.2px] text-white mb-2 uppercase">PLATINUM</h3>
+<p class="text-xs text-white/60 leading-relaxed">Nâng tầm trải nghiệm với những ưu tiên đặc biệt trong dịch vụ.</p>
+</div>
+</div>
+<!-- DIAMOND -->
+<div class="flex-shrink-0 w-[280px] md:w-[320px] aspect-[3/4] rounded-[14px] bg-[#222222] p-8 flex flex-col justify-between snap-center luxury-shadow">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-[#D2A7A7]" data-icon="diamond" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="text-[10px] tracking-[1.2px] font-bold text-white/30 uppercase">Elite</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold tracking-[1.2px] text-white mb-2 uppercase">DIAMOND</h3>
+<p class="text-xs text-white/60 leading-relaxed">Đỉnh cao đặc quyền. Sự chăm sóc tinh tế nhất dành riêng cho bạn.</p>
+</div>
+</div>
+</section>
+<!-- Current Tier Benefits -->
+<section class="mb-20">
+<div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+<div>
+<h2 class="text-lg font-bold tracking-[1.5px] text-[#222222] uppercase">ĐẶC QUYỀN HẠNG VÀNG</h2>
+<div class="h-1 w-12 bg-[#D2A7A7] mt-2"></div>
+</div>
+<p class="text-xs text-on-surface-variant uppercase tracking-[1px] font-medium">Chi tiết quyền lợi hiện có</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Benefit 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-[14px] luxury-shadow transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[#795656]" data-icon="cake">cake</span>
+</div>
+<h4 class="text-[10px] tracking-[1.2px] font-bold text-on-surface-variant uppercase mb-2">Voucher sinh nhật</h4>
+<p class="text-2xl font-bold text-[#222222]">500.000đ</p>
+<p class="mt-4 text-xs text-outline leading-relaxed">Áp dụng trong tháng sinh nhật cho mọi đơn hàng.</p>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-[14px] luxury-shadow transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[#795656]" data-icon="add_task">add_task</span>
+</div>
+<h4 class="text-[10px] tracking-[1.2px] font-bold text-on-surface-variant uppercase mb-2">Tích điểm ưu tiên</h4>
+<p class="text-2xl font-bold text-[#222222]">x1.5 Điểm</p>
+<p class="mt-4 text-xs text-outline leading-relaxed">Tăng tốc độ tích lũy cho mỗi giao dịch thành công.</p>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-[14px] luxury-shadow transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[#795656]" data-icon="local_shipping">local_shipping</span>
+</div>
+<h4 class="text-[10px] tracking-[1.2px] font-bold text-on-surface-variant uppercase mb-2">Vận chuyển</h4>
+<p class="text-2xl font-bold text-[#222222]">Miễn phí</p>
+<p class="mt-4 text-xs text-outline leading-relaxed">Không giới hạn số lần và giá trị đơn hàng tối thiểu.</p>
+</div>
+<!-- Benefit 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-[14px] luxury-shadow transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[#795656]" data-icon="content_cut">content_cut</span>
+</div>
+<h4 class="text-[10px] tracking-[1.2px] font-bold text-on-surface-variant uppercase mb-2">Dịch vụ tại quầy</h4>
+<p class="text-2xl font-bold text-[#222222]">Ưu tiên</p>
+<p class="mt-4 text-xs text-outline leading-relaxed">Thử đồ và chỉnh sửa trang phục miễn phí tại mọi cửa hàng.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section (Optional but luxury feel) -->
+<section class="mb-32 relative overflow-hidden rounded-[14px] bg-primary text-white p-12 flex flex-col md:flex-row items-center justify-between">
+<div class="z-10 text-center md:text-left mb-8 md:mb-0">
+<h3 class="text-2xl font-bold tracking-[1.2px] uppercase">Nâng hạng Diamond?</h3>
+<p class="mt-2 text-white/70 font-light">Chỉ còn một bước để chạm tới những đặc quyền thượng lưu nhất.</p>
+</div>
+<button class="z-10 bg-white text-[#222222] px-8 py-4 rounded-full text-[10px] font-bold tracking-[2px] uppercase hover:bg-stone-100 transition-colors">Tìm hiểu thêm</button>
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-10">
+<div class="bg-gradient-to-l from-white/40 to-transparent h-full w-full"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#F9F9F9]/90 dark:bg-neutral-900/90 backdrop-blur-xl border-t-[0.5px] border-[#222222]/10 shadow-[0_-20px_40px_rgba(34,34,34,0.05)] z-50">
+<!-- Trang chủ -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trang_ch_m_u_m_i/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Trang chủ</span>
+</a>
+<!-- Danh mục -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../k_t_qu_t_m_ki_m_flat_lay/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Danh mục</span>
+</a>
+<!-- Giỏ hàng -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../gi_h_ng_m_u_m_i/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Giỏ hàng</span>
+</a>
+<!-- Thành viên -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Thành viên</span>
+</a>
+</nav>
+<script src="../app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Find all top headers/navs and attach click event to any shopping_bag icons
+    const topContainers = document.querySelectorAll('header, nav.fixed.top-0');
+    topContainers.forEach(container => {
+        const icons = container.querySelectorAll('span.material-symbols-outlined');
+        icons.forEach(icon => {
+            if (icon.textContent.trim() === 'shopping_bag') {
+                icon.style.cursor = 'pointer';
+                icon.addEventListener('click', () => {
+                    window.location.href = '../gi_h_ng_m_u_m_i/code.html';
+                });
+            }
+        });
+    });
+});
+</script>
+</body></html> 

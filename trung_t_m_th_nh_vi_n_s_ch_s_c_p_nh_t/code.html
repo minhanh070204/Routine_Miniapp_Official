@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="vi"><head><meta charset="UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f9f9f9",
+              "primary-fixed": "#e5e2e1",
+              "on-secondary": "#fff7f6",
+              "secondary-container": "#ffdad9",
+              "primary-fixed-dim": "#d6d4d3",
+              "secondary-fixed": "#ffdad9",
+              "on-tertiary-fixed": "#44223f",
+              "secondary": "#795656",
+              "surface-dim": "#d7dbdb",
+              "on-tertiary-fixed-variant": "#643e5d",
+              "on-surface-variant": "#5b6061",
+              "primary-container": "#e5e2e1",
+              "surface-container-highest": "#dfe3e4",
+              "background": "#f9f9f9",
+              "error-dim": "#791903",
+              "surface-variant": "#dfe3e4",
+              "on-secondary-fixed": "#563738",
+              "secondary-fixed-dim": "#f7c9c9",
+              "primary": "#605f5f",
+              "surface": "#f9f9f9",
+              "error-container": "#fd795a",
+              "on-tertiary": "#fff7f9",
+              "on-error-container": "#6e1400",
+              "inverse-surface": "#0c0f0f",
+              "tertiary-fixed-dim": "#deadd1",
+              "on-background": "#2f3334",
+              "inverse-on-surface": "#9c9d9d",
+              "tertiary": "#7a5272",
+              "secondary-dim": "#6c4a4b",
+              "primary-dim": "#535353",
+              "outline": "#777b7c",
+              "surface-container-low": "#f2f4f4",
+              "tertiary-container": "#ecbadf",
+              "outline-variant": "#afb3b3",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-dim": "#6d4665",
+              "on-primary-container": "#525151",
+              "on-primary-fixed-variant": "#5c5b5b",
+              "surface-tint": "#605f5f",
+              "on-surface": "#2f3334",
+              "error": "#a73b21",
+              "inverse-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#755353",
+              "on-tertiary-container": "#5a3654",
+              "on-secondary-container": "#6a4949",
+              "tertiary-fixed": "#ecbadf",
+              "on-primary": "#fbf8f8",
+              "on-primary-fixed": "#403f3f",
+              "on-error": "#fff7f6",
+              "surface-container-high": "#e6e9e9",
+              "surface-container": "#eceeef"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.25rem", 
+                "lg": "0.5rem", 
+                "xl": "0.75rem", 
+                "2xl": "0.875rem",
+                "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24
+        }
+        body {
+            background-color: #f9f9f9;
+        }
+        .text-accent {
+            color: #D2A7A7
+        }
+        .bg-accent {
+            background-color: #D2A7A7
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none
+        }
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .card-rounded {
+            border-radius: 14px;
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    /* Styling according to user requirement */
+    button:not(.rounded-full):not([class*="rounded-full"]), 
+    a:not(.rounded-full)[class*="bg-[#222222]"], 
+    a:not(.rounded-full)[class*="bg-black"],
+    .card-rounded:not(.rounded-full) {
+        border-radius: 8px !important;
+    }
+</style>
+<style>
+    /* Absolute perfect centering for the Routine logo */
+    nav, header { position: relative; }
+    nav img[alt="ROUTINE"], header img[alt="ROUTINE"] {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+        height: 32px !important; max-height: 100% !important;
+        z-index: 10 !important;
+    }
+    nav a:has(img[alt="ROUTINE"]), header a:has(img[alt="ROUTINE"]) {
+        position: static !important;
+        display: block !important;
+        flex-grow: 0 !important;
+    }
+</style>
+</head>
+<body class="font-body text-on-background selection:bg-secondary-container bg-[#f9f9f9]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 dark:bg-neutral-900/90 backdrop-blur-xl flex justify-between items-center px-6 py-4 border-b border-outline-variant/10 bg-white" style="background-color: #FFFFFF;"><meta charset="UTF-8">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#222222] dark:text-[#F9F9F9] hover:opacity-70 transition-opacity duration-300 cursor-pointer">menu</span>
+</div>
+<img src="https://media.routine.vn/0x0/prod/media/52ba65a3-e085-45a6-bf5e-fb9c359abff7.webp" alt="ROUTINE" class="h-4 sm:h-5 object-contain mx-auto" />
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#222222] dark:text-[#F9F9F9] hover:opacity-70 transition-opacity duration-300 cursor-pointer">shopping_bag</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Profile Header -->
+<section class="mb-10">
+<div class="flex items-center gap-6">
+<div class="relative">
+<div class="w-20 h-20 rounded-full overflow-hidden border border-outline-variant/30 shadow-sm">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmn46dM8heo_qpmPMVp5B_Ov2VDUVWOJwCYWjmjzqC1TnMIlrRhA9vSkySPUKjZeuufdIEwCWfsAxIs1FoPkQ-lK74yyj6GvozR7z0qzd1YdtdVkh2jolZ9Ea3GXLl1kwUGpq_4D2bH79TEp2ez7oWWM1uam1ZQxa4VDuP_VfB9oP94_CN3YbUvp9Ibu58pfYKLvqVUfYZEaqReN5UqEra0CfmjOIp_j34osHAGKXSy7pcRBdXjO13d-Sy0G4gMlnhxb9VNP1cqDvV"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-accent text-white rounded-full p-1 border-4 border-[#F9F9F9]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1">
+<h2 class="text-2xl font-bold tracking-tight text-[#222222] uppercase">Pro Tennis Player</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] tracking-[1.5px] font-bold text-accent uppercase">Hạng Vàng</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant/40"></span>
+<span class="text-[10px] tracking-[1.5px] font-medium text-[#222222]/60 uppercase">Member since 2022</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Point Balance & Tier Lookup Card -->
+<section class="mb-6">
+<div class="relative overflow-hidden card-rounded bg-[#222222] p-8 text-white shadow-xl shadow-[#222222]/10">
+<div class="relative z-10">
+<p class="text-[10px] tracking-[2px] uppercase opacity-60 mb-1">Điểm tích lũy hiện có</p>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-light">1,250</span>
+<span class="text-sm opacity-60 uppercase tracking-widest font-light">Points</span>
+</div>
+<span class="material-symbols-outlined opacity-30 text-3xl font-extralight">analytics</span>
+</div>
+<div class="mt-8">
+<div class="flex justify-between items-end mb-2">
+<p class="text-[10px] tracking-[1.2px] uppercase opacity-50">Tiến trình nâng hạng Bạch Kim</p>
+<span class="text-[10px] tracking-[1px] opacity-70 uppercase font-medium">750 / 1000 pts</span>
+</div>
+<div class="w-full h-[1px] bg-white/10 overflow-hidden">
+<div class="h-full bg-accent w-[75%] transition-all duration-1000"></div>
+</div>
+</div>
+<a class="mt-8 w-full block text-center py-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors card-rounded text-[10px] font-bold tracking-[2px] uppercase" href="../tra_c_u_i_m_v_h_ng_th_nh_vi_n/code.html">
+                    Tra cứu điểm &amp; Hạng thành viên
+                </a>
+</div>
+</div>
+</section>
+<!-- Loyalty Features: Vertical Stack -->
+<section class="space-y-3 mb-10">
+<!-- Membership Circle Primary CTA -->
+<div class="group cursor-pointer flex items-center justify-between p-5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] card-rounded border border-neutral-100 transition-all duration-300 hover:border-neutral-200">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full flex items-center justify-center bg-neutral-50">
+<span class="material-symbols-outlined text-2xl font-extralight text-[#222222]/60">workspace_premium</span>
+</div>
+<div>
+<h3 class="text-[12px] font-bold tracking-[1.2px] uppercase text-[#222222]">Membership Circle</h3>
+<p class="text-[10px] text-[#222222]/40 uppercase mt-0.5 tracking-tight">Khám phá đặc quyền ưu tú</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#222222]/20 group-hover:translate-x-1 transition-all group-hover:text-[#222222]">chevron_right</span>
+</div>
+<!-- Point History -->
+<a class="group flex items-center justify-between p-5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] card-rounded border border-neutral-100 hover:border-neutral-200 transition-all" href="#">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-neutral-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#222222]/60 text-2xl font-extralight">history_edu</span>
+</div>
+<div>
+<h3 class="text-[12px] font-bold tracking-[1.2px] uppercase text-[#222222]">Lịch sử điểm</h3>
+<p class="text-[10px] text-[#222222]/40 uppercase mt-0.5 tracking-tight">Theo dõi biến động điểm số</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#222222]/20 group-hover:text-[#222222] transition-colors">chevron_right</span>
+</a>
+<!-- Point Redemption -->
+<a class="group flex items-center justify-between p-5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] card-rounded border border-neutral-100 hover:border-neutral-200 transition-all" href="../i_i_m_th_ng/code.html">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-neutral-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#222222]/60 text-2xl font-extralight">redeem</span>
+</div>
+<div>
+<h3 class="text-[12px] font-bold tracking-[1.2px] uppercase text-[#222222]">Đổi điểm thưởng</h3>
+<p class="text-[10px] text-[#222222]/40 uppercase mt-0.5 tracking-tight">Sử dụng điểm đổi Voucher mới</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-accent/10 text-accent text-[8px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter">50+ Offers</span>
+<span class="material-symbols-outlined text-[#222222]/20 group-hover:text-[#222222] transition-colors">chevron_right</span>
+</div>
+</a>
+<!-- My Offers/Vouchers -->
+<a class="group flex items-center justify-between p-5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] card-rounded border border-neutral-100 hover:border-neutral-200 transition-all" href="#">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-neutral-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#222222]/60 text-2xl font-extralight">loyalty</span>
+</div>
+<div>
+<h3 class="text-[12px] font-bold tracking-[1.2px] uppercase text-[#222222]">Ưu đãi của tôi</h3>
+<p class="text-[10px] text-[#222222]/40 uppercase mt-0.5 tracking-tight">Voucher đã sẵn sàng sử dụng</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#222222]/20 group-hover:text-[#222222] transition-colors">chevron_right</span>
+</a>
+<!-- Marketplace Point Claim -->
+<a class="group flex items-center justify-between p-5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] card-rounded border border-neutral-100 hover:border-neutral-200 transition-all" href="#">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-neutral-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#222222]/60 text-2xl font-extralight">receipt_long</span>
+</div>
+<div>
+<h3 class="text-[12px] font-bold tracking-[1.2px] uppercase text-[#222222]">Tích điểm đơn sàn</h3>
+<p class="text-[10px] text-[#222222]/40 uppercase mt-0.5 tracking-tight">Tích điểm từ Shopee, Lazada, TikTok</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#222222]/20 group-hover:text-[#222222] transition-colors">chevron_right</span>
+</a>
+</section>
+<!-- Recent Activity Headline -->
+<section class="mb-8">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-[12px] font-bold tracking-[2px] uppercase text-[#222222]">Lịch sử gần đây</h2>
+<span class="text-[10px] tracking-[1px] uppercase text-accent font-bold cursor-pointer">Tất cả</span>
+</div>
+<div class="space-y-6 px-1">
+<div class="flex justify-between items-center pb-6 border-b border-[#222222]/5">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-white border border-neutral-100 shadow-sm">
+<span class="material-symbols-outlined text-xs font-light">shopping_cart</span>
+</div>
+<div>
+<p class="text-[11px] font-bold uppercase text-[#222222]">Đơn hàng #RT9921</p>
+<p class="text-[10px] text-[#222222]/40 uppercase mt-0.5 tracking-tight">14 Th05, 2024</p>
+</div>
+</div>
+<span class="text-[11px] font-bold text-accent">+150 PTS</span>
+</div>
+<div class="flex justify-between items-center pb-6 border-b border-[#222222]/5">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-white border border-neutral-100 shadow-sm">
+<span class="material-symbols-outlined text-xs font-light">redeem</span>
+</div>
+<div>
+<p class="text-[11px] font-bold uppercase text-[#222222]">Voucher Linen 15%</p>
+<p class="text-[10px] text-[#222222]/40 uppercase mt-0.5 tracking-tight">10 Th05, 2024</p>
+</div>
+</div>
+<span class="text-[11px] font-bold text-[#222222]">-250 PTS</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#F9F9F9]/90 dark:bg-neutral-900/90 backdrop-blur-xl border-t-[0.5px] border-[#222222]/10 shadow-[0_-20px_40px_rgba(34,34,34,0.05)] z-50">
+<!-- Trang chủ -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trang_ch_m_u_m_i/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Trang chủ</span>
+</a>
+<!-- Danh mục -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../k_t_qu_t_m_ki_m_flat_lay/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Danh mục</span>
+</a>
+<!-- Giỏ hàng -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../gi_h_ng_m_u_m_i/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Giỏ hàng</span>
+</a>
+<!-- Thành viên -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Thành viên</span>
+</a>
+</nav>
+<script src="../app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Find all top headers/navs and attach click event to any shopping_bag icons
+    const topContainers = document.querySelectorAll('header, nav.fixed.top-0');
+    topContainers.forEach(container => {
+        const icons = container.querySelectorAll('span.material-symbols-outlined');
+        icons.forEach(icon => {
+            if (icon.textContent.trim() === 'shopping_bag') {
+                icon.style.cursor = 'pointer';
+                icon.addEventListener('click', () => {
+                    window.location.href = '../gi_h_ng_m_u_m_i/code.html';
+                });
+            }
+        });
+    });
+});
+</script>
+</body></html>

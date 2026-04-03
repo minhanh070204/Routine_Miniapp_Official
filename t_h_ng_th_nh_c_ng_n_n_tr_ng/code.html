@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="vi"><head><meta charset="UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#403f3f",
+              "on-primary": "#fbf8f8",
+              "error": "#a73b21",
+              "tertiary-fixed": "#ecbadf",
+              "surface": "#f9f9f9",
+              "on-tertiary-fixed": "#44223f",
+              "surface-variant": "#dfe3e4",
+              "primary-fixed-dim": "#d6d4d3",
+              "on-secondary-container": "#6a4949",
+              "on-surface-variant": "#5b6061",
+              "surface-tint": "#605f5f",
+              "on-error-container": "#6e1400",
+              "on-tertiary": "#fff7f9",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#e6e9e9",
+              "on-secondary": "#fff7f6",
+              "inverse-surface": "#0c0f0f",
+              "error-dim": "#791903",
+              "surface-container-low": "#f2f4f4",
+              "on-surface": "#2f3334",
+              "surface-container-highest": "#dfe3e4",
+              "secondary-container": "#ffdad9",
+              "outline": "#777b7c",
+              "on-secondary-fixed-variant": "#755353",
+              "surface-bright": "#f9f9f9",
+              "tertiary": "#7a5272",
+              "primary-container": "#e5e2e1",
+              "on-primary-container": "#525151",
+              "on-primary-fixed-variant": "#5c5b5b",
+              "primary-dim": "#535353",
+              "on-secondary-fixed": "#563738",
+              "on-error": "#fff7f6",
+              "inverse-on-surface": "#9c9d9d",
+              "primary": "#605f5f",
+              "tertiary-container": "#ecbadf",
+              "error-container": "#fd795a",
+              "secondary": "#795656",
+              "primary-fixed": "#e5e2e1",
+              "tertiary-fixed-dim": "#deadd1",
+              "on-tertiary-container": "#5a3654",
+              "surface-container": "#eceeef",
+              "secondary-fixed-dim": "#f7c9c9",
+              "on-background": "#2f3334",
+              "tertiary-dim": "#6d4665",
+              "inverse-primary": "#ffffff",
+              "background": "#f9f9f9",
+              "secondary-dim": "#6c4a4b",
+              "secondary-fixed": "#ffdad9",
+              "on-tertiary-fixed-variant": "#643e5d",
+              "outline-variant": "#afb3b3",
+              "surface-dim": "#d7dbdb"
+            },
+            fontFamily: {
+              "headline": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>body {
+    font-family: "Inter", sans-serif
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24
+    }
+.linen-texture {
+    background-color: #f9f9f9;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBCHumJXo5FAtI0H1ZVdtezy_F8mQHH0owHIJ0P5cleWDpXpKULIz9OwdHPn0AllI8wYRoOeMBhPVi_IgdUq-uBNu5SzeZAxC-_jvtkkfNrTG8Gqt9GlzgXkr8-iaJlektrcbB5JIf32zITzE6h7zF_FlL-jxoKKumOSggdxAXNzPLsiizh4nC71t87eqgLxKtEKUCvJXFhyqnkEwD5EE-IMz3by7YWacVyuu2SK9A5VCvEwDGGCNN-TAtqyoIVxWUgNb_-dDikZ5jW)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    /* Styling according to user requirement */
+    button:not(.rounded-full):not([class*="rounded-full"]), 
+    a:not(.rounded-full)[class*="bg-[#222222]"], 
+    a:not(.rounded-full)[class*="bg-black"],
+    .card-rounded:not(.rounded-full) {
+        border-radius: 8px !important;
+    }
+</style>
+<style>
+    /* Absolute perfect centering for the Routine logo */
+    nav, header { position: relative; }
+    nav img[alt="ROUTINE"], header img[alt="ROUTINE"] {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+        height: 32px !important; max-height: 100% !important;
+        z-index: 10 !important;
+    }
+    nav a:has(img[alt="ROUTINE"]), header a:has(img[alt="ROUTINE"]) {
+        position: static !important;
+        display: block !important;
+        flex-grow: 0 !important;
+    }
+</style>
+</head>
+<body class="text-on-surface min-h-screen flex flex-col items-center" style="background-color: #FFFFFF;">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between px-8 py-4 w-full dark:bg-stone-900 transition-all duration-300 ease-in-out fixed top-0 z-50 bg-white"><meta charset="UTF-8">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-[#222222] dark:text-stone-100" data-icon="close">close</span>
+</button>
+<img src="https://media.routine.vn/0x0/prod/media/52ba65a3-e085-45a6-bf5e-fb9c359abff7.webp" alt="ROUTINE" class="h-4 sm:h-5 object-contain mx-auto" />
+<div class="w-6"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-1 w-full max-w-lg mt-20 mb-32 px-6 overflow-y-auto">
+<!-- Confirmation Section -->
+<section class="flex flex-col items-center text-center mt-12 mb-10">
+<div class="w-24 h-24 rounded-full bg-surface-container-low flex items-center justify-center mb-8 relative">
+<div class="absolute inset-0 rounded-full border border-[#D2A7A7] opacity-20 scale-125"></div>
+<span class="material-symbols-outlined text-[#D2A7A7] text-5xl" data-icon="check_circle" style="font-variation-settings: 'wght' 200;">check_circle</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight text-[#222222] mb-2 font-headline">ĐẶT HÀNG THÀNH CÔNG</h2>
+<p class="text-on-surface-variant font-light body-lg">Cảm ơn bạn đã lựa chọn Routine.</p>
+</section>
+<!-- Order Info -->
+<section class="mb-8 p-6 rounded-xl shadow-[0_20px_40px_rgba(34,34,34,0.03)] border border-[#222222]/5 bg-[#F9F9F9]">
+<div class="flex justify-between items-center mb-4">
+<span class="text-[10px] tracking-[1.2px] uppercase font-bold text-on-surface-variant">Mã đơn hàng</span>
+<span class="font-mono text-sm text-[#222222] font-semibold">#RT2026-9921</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] tracking-[1.2px] uppercase font-bold text-on-surface-variant">Ngày đặt</span>
+<span class="text-sm text-on-surface">15 Tháng 05, 2024</span>
+</div>
+</section>
+<!-- Points Earned Card -->
+<section class="mb-8 p-8 rounded-xl relative overflow-hidden group bg-[#F9F9F9]">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-[#D2A7A7] opacity-10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-[#D2A7A7]" data-icon="loyalty" style="font-variation-settings: 'FILL' 1;">loyalty</span>
+<h3 class="text-lg font-bold text-[#222222] tracking-tight">+150 ĐIỂM</h3>
+</div>
+<p class="text-sm leading-relaxed text-on-surface-variant mb-6">Bạn đã tích lũy thêm 150 điểm cho đơn hàng này. Chỉ còn 350 điểm nữa để thăng hạng thành viên Gold.</p>
+<!-- Progress Bar -->
+<div class="w-full h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-[#D2A7A7] transition-all duration-1000 ease-out" style="width: 70%;"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-[9px] uppercase tracking-wider font-bold text-stone-400">Silver</span>
+<span class="text-[9px] uppercase tracking-wider font-bold text-[#222222]">Gold</span>
+</div>
+</div>
+</section>
+<!-- Summary -->
+<section class="mb-12 border-t border-outline-variant/15 pt-8">
+<div class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-4">
+<div class="w-12 h-16 bg-surface-container-highest rounded overflow-hidden border-2 border-surface">
+<img class="w-full h-full object-cover" data-alt="minimalist fashion model wearing cream linen shirt soft studio lighting architectural shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMT_f9T0MZCX-7L54MSb_wJFAJZ1jcvIGNQThvMbbVjf6KxFHVjgBBZWtGUzdAY5AdG65RMiBtSxkfmIl2CBxA2CgyMTtHsRdf1Y3W-sxFr3Xp_nWDgvNBOR24LWlwxKyrCm4uhJlbkXL_zbOWTiSwN_vR1Nry7CQlaTNCUcD-avBmspz7cgqUZBeaOKMFchOfYlE5YipqmKRuvvUHytSoDuJXQ8Iq9Xr4n13wJlTJiIAo04gmoUaezJFKqqxf-p8jcFGv-VNAdUVE"/>
+</div>
+<div class="w-12 h-16 bg-surface-container-highest rounded overflow-hidden border-2 border-surface flex items-center justify-center text-[10px] font-bold text-[#222222]">
+                            +1
+                        </div>
+</div>
+<div>
+<p class="text-sm font-bold text-[#222222] uppercase tracking-[0.5px]">2 sản phẩm</p>
+<p class="text-[11px] text-on-surface-variant">Chi tiết đơn hàng</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-stone-400 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</section>
+<!-- Actions -->
+<div class="flex flex-col gap-4">
+<button class="w-full h-12 bg-[#222222] text-white rounded-[6px] text-[12px] font-bold tracking-[1.2px] uppercase transition-all duration-300 hover:opacity-90 active:scale-[0.98] shadow-lg shadow-[#222222]/10">
+                TIẾP TỤC MUA SẮM
+            </button>
+<button class="w-full h-12 text-[#222222] text-[12px] font-bold tracking-[1.2px] uppercase transition-all duration-300 hover:underline underline-offset-4">
+                XEM CHI TIẾT ĐƠN HÀNG
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#F9F9F9]/90 dark:bg-neutral-900/90 backdrop-blur-xl border-t-[0.5px] border-[#222222]/10 shadow-[0_-20px_40px_rgba(34,34,34,0.05)] z-50">
+<!-- Trang chủ -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trang_ch_m_u_m_i/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Trang chủ</span>
+</a>
+<!-- Danh mục -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../k_t_qu_t_m_ki_m_flat_lay/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Danh mục</span>
+</a>
+<!-- Giỏ hàng -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../gi_h_ng_m_u_m_i/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Giỏ hàng</span>
+</a>
+<!-- Thành viên -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Thành viên</span>
+</a>
+</nav>
+<script src="../app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Find all top headers/navs and attach click event to any shopping_bag icons
+    const topContainers = document.querySelectorAll('header, nav.fixed.top-0');
+    topContainers.forEach(container => {
+        const icons = container.querySelectorAll('span.material-symbols-outlined');
+        icons.forEach(icon => {
+            if (icon.textContent.trim() === 'shopping_bag') {
+                icon.style.cursor = 'pointer';
+                icon.addEventListener('click', () => {
+                    window.location.href = '../gi_h_ng_m_u_m_i/code.html';
+                });
+            }
+        });
+    });
+});
+</script>
+</body></html>

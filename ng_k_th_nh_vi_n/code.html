@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="vi"><head><meta charset="UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f2f4f4",
+              "secondary-fixed-dim": "#f7c9c9",
+              "outline": "#777b7c",
+              "on-primary-fixed-variant": "#5c5b5b",
+              "primary-dim": "#535353",
+              "outline-variant": "#afb3b3",
+              "on-tertiary-fixed-variant": "#643e5d",
+              "on-error-container": "#6e1400",
+              "secondary-container": "#ffdad9",
+              "surface-container": "#eceeef",
+              "tertiary-fixed-dim": "#deadd1",
+              "tertiary-dim": "#6d4665",
+              "on-secondary-fixed-variant": "#755353",
+              "surface-dim": "#d7dbdb",
+              "on-secondary": "#fff7f6",
+              "on-primary-fixed": "#403f3f",
+              "tertiary-container": "#ecbadf",
+              "secondary-fixed": "#ffdad9",
+              "primary": "#605f5f",
+              "inverse-primary": "#ffffff",
+              "on-tertiary-fixed": "#44223f",
+              "surface": "#f9f9f9",
+              "inverse-surface": "#0c0f0f",
+              "tertiary": "#7a5272",
+              "primary-fixed-dim": "#d6d4d3",
+              "background": "#f9f9f9",
+              "on-background": "#2f3334",
+              "error": "#a73b21",
+              "on-tertiary-container": "#5a3654",
+              "on-primary-container": "#525151",
+              "primary-fixed": "#e5e2e1",
+              "secondary-dim": "#6c4a4b",
+              "on-secondary-fixed": "#563738",
+              "surface-container-highest": "#dfe3e4",
+              "surface-bright": "#f9f9f9",
+              "error-container": "#fd795a",
+              "surface-container-high": "#e6e9e9",
+              "inverse-on-surface": "#9c9d9d",
+              "surface-tint": "#605f5f",
+              "on-secondary-container": "#6a4949",
+              "error-dim": "#791903",
+              "surface-variant": "#dfe3e4",
+              "secondary": "#795656",
+              "primary-container": "#e5e2e1",
+              "on-surface": "#2f3334",
+              "on-primary": "#fbf8f8",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#fff7f9",
+              "on-surface-variant": "#5b6061",
+              "on-error": "#fff7f6",
+              "tertiary-fixed": "#ecbadf"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    /* Styling according to user requirement */
+    button:not(.rounded-full):not([class*="rounded-full"]), 
+    a:not(.rounded-full)[class*="bg-[#222222]"], 
+    a:not(.rounded-full)[class*="bg-black"],
+    .card-rounded:not(.rounded-full) {
+        border-radius: 8px !important;
+    }
+</style>
+<style>
+    /* Absolute perfect centering for the Routine logo */
+    nav, header { position: relative; }
+    nav img[alt="ROUTINE"], header img[alt="ROUTINE"] {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+        height: 32px !important; max-height: 100% !important;
+        z-index: 10 !important;
+    }
+    nav a:has(img[alt="ROUTINE"]), header a:has(img[alt="ROUTINE"]) {
+        position: static !important;
+        display: block !important;
+        flex-grow: 0 !important;
+    }
+</style>
+</head>
+<body class="bg-surface text-on-surface leading-relaxed overflow-x-hidden">
+<!-- Top Navigation (Shared Component) -->
+<header class="bg-[#F9F9F9] dark:bg-[#1A1A1A] text-[#222222] dark:text-[#E5E2E1] font-['Inter'] tracking-[-0.02em] font-bold uppercase fixed top-0 w-full z-50 tonal-shift bg-surface-container-low transition-all duration-300"><meta charset="UTF-8">
+<div class="flex items-center justify-between px-8 py-6 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-opacity" data-icon="arrow_back">arrow_back</span>
+<span class="text-lg font-bold tracking-[1.2px]">MEMBERSHIP</span>
+</div>
+<div class="hidden md:flex gap-8">
+<span class="text-[#222222] dark:text-white hover:opacity-70 transition-opacity cursor-pointer">COLLECTIONS</span>
+<span class="text-[#605F5F] dark:text-[#A0A0A0] hover:opacity-70 transition-opacity cursor-pointer">SEARCH</span>
+<span class="text-[#222222] dark:text-white hover:opacity-70 transition-opacity cursor-pointer underline underline-offset-8">MEMBERS</span>
+<span class="text-[#605F5F] dark:text-[#A0A0A0] hover:opacity-70 transition-opacity cursor-pointer">BAG</span>
+</div>
+</div>
+</header>
+<main class="pt-28 pb-32 px-6 md:px-20 max-w-7xl mx-auto min-h-screen grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+<!-- Left Column: Branding & Intro -->
+<section class="lg:col-span-5 flex flex-col justify-center">
+<div class="space-y-8">
+<div class="space-y-4">
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-[-0.04em] uppercase text-[#222222]">THÀNH VIÊN ROUTINE</h1>
+<div class="h-1 w-12 bg-secondary/30"></div>
+</div>
+<p class="text-body-lg leading-[1.8] text-on-surface-variant max-w-md">
+                    Gia nhập cộng đồng tinh hoa để nhận ưu đãi đặc quyền và thông tin về các bộ sưu tập giới hạn.
+                </p>
+<!-- Benefits Grid -->
+<div class="grid grid-cols-1 gap-6 pt-6">
+<div class="flex items-start gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="loyalty">loyalty</span>
+</div>
+<div>
+<p class="font-bold text-xs tracking-[1.2px] uppercase">Ưu đãi 10% đơn đầu tiên</p>
+<p class="text-sm text-on-surface-variant">Áp dụng cho lần mua hàng trực tuyến đầu tiên của bạn.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="font-bold text-xs tracking-[1.2px] uppercase">Miễn phí vận chuyển</p>
+<p class="text-sm text-on-surface-variant">Cho mọi đơn hàng thành viên trong khu vực nội thành.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="redeem">redeem</span>
+</div>
+<div>
+<p class="font-bold text-xs tracking-[1.2px] uppercase">Tích điểm đổi quà</p>
+<p class="text-sm text-on-surface-variant">Nhận quà tặng giá trị dựa trên thứ hạng thành viên.</p>
+</div>
+</div>
+</div>
+<!-- Decorative Image Bleed (Asymmetric Layout) -->
+<div class="hidden lg:block relative mt-12 w-full aspect-[4/5] rounded-xl overflow-hidden shadow-xl">
+<img alt="Elegant lifestyle" class="w-full h-full object-cover" data-alt="Close-up of high-quality beige linen fabric texture draped elegantly in soft sunlight with gentle shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB_KKAA9XpOs0z8KLkjzfhCyd8F771FuSKYpx_q1m6Bz6Yl7S3tJJgMdh_-9GZkFUUAyZLIJ-kCnZRJdBxglg7jp8ZWIRzd-4FycHId0b4oRD-Q4ifmH1EeIYejPtHN0mDzX3DOEXVI2gsbJ55eqq7lG1_8MaChf9gkoCzVI7G7HQxsGp7djm8odqC9nieWNhL125c8pMBhTQR5SI50TyFnKAfS0J0BMtKMMJONDyohTmkrjrsF0BTXX5vpD1rfJFC0bYn7XHftI9U"/>
+<div class="absolute inset-0 bg-black/5"></div>
+</div>
+</div>
+</section>
+<!-- Right Column: Registration Form -->
+<section class="lg:col-span-7 flex flex-col items-center">
+<div class="w-full max-w-2xl bg-surface-container-lowest rounded-[14px] p-8 md:p-12 shadow-[0_20px_40px_rgba(34,34,34,0.05)] border border-outline-variant/15">
+<form class="space-y-8">
+<!-- Form Fields -->
+<div class="space-y-6">
+<div class="relative group">
+<label class="text-[10px] font-bold tracking-[1.2px] uppercase text-on-surface-variant mb-1 block">Họ và tên</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-on-background transition-all placeholder:text-outline-variant/60 font-body" placeholder="Nguyễn Văn A" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative group">
+<label class="text-[10px] font-bold tracking-[1.2px] uppercase text-on-surface-variant mb-1 block">Số điện thoại</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-on-background transition-all placeholder:text-outline-variant/60" placeholder="090 123 4567" type="tel"/>
+</div>
+<div class="relative group">
+<label class="text-[10px] font-bold tracking-[1.2px] uppercase text-on-surface-variant mb-1 block">Địa chỉ email</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-on-background transition-all placeholder:text-outline-variant/60" placeholder="example@maisonroutine.vn" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative group">
+<label class="text-[10px] font-bold tracking-[1.2px] uppercase text-on-surface-variant mb-3 block">Giới tính</label>
+<div class="flex gap-4">
+<label class="flex items-center gap-2 cursor-pointer group/item">
+<input class="w-4 h-4 text-primary bg-surface border-outline focus:ring-offset-0 focus:ring-0" name="gender" type="radio"/>
+<span class="text-sm">Nam</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group/item">
+<input class="w-4 h-4 text-primary bg-surface border-outline focus:ring-offset-0 focus:ring-0" name="gender" type="radio"/>
+<span class="text-sm">Nữ</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group/item">
+<input class="w-4 h-4 text-primary bg-surface border-outline focus:ring-offset-0 focus:ring-0" name="gender" type="radio"/>
+<span class="text-sm">Khác</span>
+</label>
+</div>
+</div>
+<div class="relative group">
+<label class="text-[10px] font-bold tracking-[1.2px] uppercase text-on-surface-variant mb-1 block">Ngày sinh</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-on-background transition-all text-on-surface" type="date"/>
+</div>
+</div>
+</div>
+<!-- CTA -->
+<div class="pt-4">
+<button class="w-full h-12 bg-[#222222] text-white text-[11px] font-bold tracking-[1.5px] uppercase rounded-[6px] hover:opacity-90 transition-all duration-300 shadow-lg shadow-black/10" type="submit">
+                            XÁC NHẬN ĐĂNG KÝ
+                        </button>
+</div>
+<p class="text-[11px] text-center text-on-surface-variant/70 leading-relaxed italic">
+                        Bằng cách xác nhận đăng ký, bạn đồng ý với <a class="underline hover:text-on-surface transition-colors" href="#">Chính sách bảo mật</a> của Maison Routine. Thông tin của bạn được cam kết bảo mật tuyệt đối.
+                    </p>
+</form>
+</div>
+<!-- Additional Decorative Element -->
+<div class="mt-8 flex items-center gap-3 opacity-30">
+<div class="h-px w-8 bg-on-surface"></div>
+<span class="text-[10px] tracking-[2px] uppercase">The Curated Atelier</span>
+<div class="h-px w-8 bg-on-surface"></div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Only / Shared Component) -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#F9F9F9]/90 dark:bg-neutral-900/90 backdrop-blur-xl border-t-[0.5px] border-[#222222]/10 shadow-[0_-20px_40px_rgba(34,34,34,0.05)] z-50">
+<!-- Trang chủ -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trang_ch_m_u_m_i/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Trang chủ</span>
+</a>
+<!-- Danh mục -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../k_t_qu_t_m_ki_m_flat_lay/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Danh mục</span>
+</a>
+<!-- Giỏ hàng -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../gi_h_ng_m_u_m_i/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Giỏ hàng</span>
+</a>
+<!-- Thành viên -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Thành viên</span>
+</a>
+</nav>
+<script src="../app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Find all top headers/navs and attach click event to any shopping_bag icons
+    const topContainers = document.querySelectorAll('header, nav.fixed.top-0');
+    topContainers.forEach(container => {
+        const icons = container.querySelectorAll('span.material-symbols-outlined');
+        icons.forEach(icon => {
+            if (icon.textContent.trim() === 'shopping_bag') {
+                icon.style.cursor = 'pointer';
+                icon.addEventListener('click', () => {
+                    window.location.href = '../gi_h_ng_m_u_m_i/code.html';
+                });
+            }
+        });
+    });
+});
+</script>
+</body></html>

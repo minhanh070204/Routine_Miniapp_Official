@@ -1,0 +1,249 @@
+﻿<<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Routine - Voucher Success</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#777b7c",
+              "on-surface-variant": "#5b6061",
+              "inverse-on-surface": "#9c9d9d",
+              "primary-fixed-dim": "#d6d4d3",
+              "on-surface": "#2f3334",
+              "surface-tint": "#605f5f",
+              "error": "#a73b21",
+              "background": "#f9f9f9",
+              "on-primary-fixed": "#403f3f",
+              "secondary-fixed": "#ffdad9",
+              "on-tertiary-fixed-variant": "#643e5d",
+              "secondary-dim": "#6c4a4b",
+              "surface-container": "#eceeef",
+              "tertiary-fixed": "#ecbadf",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#fff7f9",
+              "surface-variant": "#dfe3e4",
+              "on-error": "#fff7f6",
+              "secondary": "#795656",
+              "primary-container": "#e5e2e1",
+              "on-tertiary-fixed": "#44223f",
+              "surface-container-highest": "#dfe3e4",
+              "tertiary": "#7a5272",
+              "inverse-primary": "#ffffff",
+              "surface-container-low": "#f2f4f4",
+              "surface-container-high": "#e6e9e9",
+              "surface-dim": "#d7dbdb",
+              "on-background": "#2f3334",
+              "primary": "#605f5f",
+              "tertiary-dim": "#6d4665",
+              "on-secondary": "#fff7f6",
+              "tertiary-container": "#ecbadf",
+              "error-container": "#fd795a",
+              "on-secondary-container": "#6a4949",
+              "on-secondary-fixed-variant": "#755353",
+              "error-dim": "#791903",
+              "tertiary-fixed-dim": "#deadd1",
+              "primary-dim": "#535353",
+              "outline-variant": "#afb3b3",
+              "on-primary": "#fbf8f8",
+              "on-error-container": "#6e1400",
+              "secondary-fixed-dim": "#f7c9c9",
+              "on-secondary-fixed": "#563738",
+              "on-tertiary-container": "#5a3654",
+              "surface": "#f9f9f9",
+              "on-primary-container": "#525151",
+              "surface-bright": "#f9f9f9",
+              "inverse-surface": "#0c0f0f",
+              "secondary-container": "#ffdad9",
+              "primary-fixed": "#e5e2e1",
+              "on-primary-fixed-variant": "#5c5b5b"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-ash-rose { color: #D2A7A7; }
+        .bg-ash-rose { background-color: #D2A7A7; }
+        .glass-blur { backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style>
+    /* Styling according to user requirement */
+    button:not(.rounded-full):not([class*="rounded-full"]), 
+    a:not(.rounded-full)[class*="bg-[#222222]"], 
+    a:not(.rounded-full)[class*="bg-black"],
+    .card-rounded:not(.rounded-full) {
+        border-radius: 8px !important;
+    }
+</style>
+<style>
+    /* Absolute perfect centering for the Routine logo */
+    nav, header { position: relative; }
+    nav img[alt="ROUTINE"], header img[alt="ROUTINE"] {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+        height: 32px !important; max-height: 100% !important;
+        z-index: 10 !important;
+    }
+    nav a:has(img[alt="ROUTINE"]), header a:has(img[alt="ROUTINE"]) {
+        position: static !important;
+        display: block !important;
+        flex-grow: 0 !important;
+    }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation (Shell suppressed but rendered for context) -->
+<nav class="fixed top-0 w-full z-50 bg-[#F9F9F9]/80 backdrop-blur-[20px] transition-all duration-300 ease-in-out border-b border-[#222222]/10">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-[#222222] hover:opacity-60 transition-opacity cursor-pointer">menu</span>
+</div>
+<img src="https://media.routine.vn/0x0/prod/media/52ba65a3-e085-45a6-bf5e-fb9c359abff7.webp" alt="ROUTINE" class="h-4 sm:h-5 object-contain mx-auto" />
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-[#222222] hover:opacity-60 transition-opacity cursor-pointer">shopping_bag</span>
+</div>
+</div>
+</nav>
+
+<!-- Main Content Canvas (Blurred background for Modal) -->
+<!-- Using place-holder category cards behind the modal for visual effect -->
+<main class="min-h-screen pt-24 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 blur-sm overflow-hidden h-[calc(100vh-100px)]">
+<!-- Decorative Category Card -->
+<div class="aspect-[3/4] bg-surface-container-low rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover grayscale-[0.2]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6HxNI-w6JzDIoIppgJGiSoRrHqIAH26Ti0I-JxFchvY_efNo9k1zjKeCi-N5hjBCHlA6vMjv3WBRYeAmSac5DMOpkceP8HGa5eITNuwYhx4i8Emldq5aHFAsWO1_4qAWWZ-F-FRF86EvmuUDJkoatLm6VHgtvSTl0wF8nLs6vEkC7aBWy0Q6gupwzIazpT4BlslGF0P1xN0CCn141rHgn7QVXhTMuZHqN1RMna3_EqS4Hi2JldkNcmpdDujLIYNpiK4geMejHHiuc"/>
+</div>
+<div class="aspect-[3/4] bg-surface-container-low rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDspeKVWtFDCG15wh2ql9EmyzsSUGAeouLZm5A75Rxvba7vcSx6pNXc5ywDqESFHMSyx0nr9VPTIosPVdfPabaDlvTQgajZMqleYIXZNyN2MoU3LQcZzFlxCcuUq8G_jpK-9v42GpiCveIZbYiVt3hQ3EYowPxw4CvLRwF--OYuMurSzNDPd6NwctiIdzjeWdMW-I132G3pEYYuFhGvsAvkfv0jdrh241pKq2pCWxfG_kdArJeXXHWXU18MazojU50_RhGzv4GW8NaJ"/>
+</div>
+</div>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-[60] flex items-center justify-center p-6 bg-[#222222]/40 glass-blur pb-20">
+<!-- Modal Container -->
+<div class="relative w-full max-w-sm bg-surface-container-lowest rounded-2xl shadow-[0_20px_60px_rgba(34,34,34,0.15)] overflow-hidden transition-all duration-500 transform scale-100">
+<!-- Close Button -->
+<a href="../i_i_m_th_ng/code.html" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer z-10">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</a>
+<!-- Modal Body -->
+<div class="p-6 sm:p-8 flex flex-col items-center text-center">
+<!-- Status Badge -->
+<div class="mb-4 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-ash-rose/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-ash-rose text-3xl" style="font-variation-settings: 'FILL' 1;">card_giftcard</span>
+</div>
+</div>
+<!-- Headline -->
+<h2 class="text-3xl font-headline font-extrabold tracking-[-0.04em] text-[#222222] mb-2">
+                    CHÚC MỪNG!
+                </h2>
+<!-- Subheadline -->
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 max-w-[280px]">
+                    Bạn đã đổi điểm thưởng nhận thành công Voucher <span class="font-bold text-[#222222]">GIẢM 100K</span>
+                </p>
+<!-- Voucher Card Visual -->
+<div class="w-full relative mb-8 aspect-[1.8/1] bg-ash-rose rounded-xl p-6 flex flex-col justify-between items-start text-white overflow-hidden group">
+<!-- Texture/Pattern -->
+<div class="absolute -right-8 -top-8 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700"></div>
+<div class="absolute -left-10 -bottom-10 w-48 h-48 bg-black/5 rounded-full blur-2xl"></div>
+<div class="z-10 flex w-full justify-between items-start">
+<div class="text-left">
+<p class="text-[10px] tracking-[2px] font-bold opacity-80">ROUTINE EXCLUSIVE</p>
+<h3 class="text-4xl font-headline font-bold">100.000₫</h3>
+</div>
+<span class="material-symbols-outlined text-white/50 text-4xl">confirmation_number</span>
+</div>
+<div class="z-10 w-full flex justify-between items-end border-t border-white/20 pt-4 mt-4">
+<div class="text-left">
+<p class="text-[9px] tracking-wider opacity-60 uppercase">Code</p>
+<p class="text-[12px] font-bold tracking-widest leading-none">ROUTINE100K</p>
+</div>
+<p class="text-[9px] opacity-60">HSD: 30.12.2024</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="w-full flex-col gap-3 flex">
+<a href="../u_i_c_a_t_i_n_n_tr_ng/code.html" class="flex items-center justify-center w-full h-12 bg-[#222222] text-white text-[11px] tracking-[1.5px] font-bold uppercase rounded-md shadow-lg shadow-black/10 hover:opacity-90 transition-all active:scale-[0.98]">
+                        XEM VOUCHER CỦA TÔI
+                    </a>
+<a href="../trang_ch_m_u_m_i/code.html" class="flex items-center justify-center w-full h-12 bg-transparent text-[#222222] text-[11px] tracking-[1.5px] font-bold uppercase rounded-md border border-transparent hover:bg-surface-container-low transition-all">
+                        TIẾP TỤC MUA SẮM
+                    </a>
+</div>
+</div>
+<!-- Decorative Bottom Bar -->
+<div class="h-1.5 w-full bg-ash-rose/20 relative overflow-hidden">
+<div class="absolute inset-0 bg-ash-rose w-1/3 animate-pulse"></div>
+</div>
+</div>
+</div>
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#F9F9F9]/90 dark:bg-neutral-900/90 backdrop-blur-xl border-t-[0.5px] border-[#222222]/10 shadow-[0_-20px_40px_rgba(34,34,34,0.05)] z-[110]">
+<!-- Trang chủ -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trang_ch_m_u_m_i/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Trang chủ</span>
+</a>
+<!-- Danh mục -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../k_t_qu_t_m_ki_m_flat_lay/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Danh mục</span>
+</a>
+<!-- Giỏ hàng -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../gi_h_ng_m_u_m_i/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Giỏ hàng</span>
+</a>
+<!-- Thành viên -->
+<a class="flex flex-col items-center justify-center text-[#222222]/50 hover:text-[#D2A7A7] transition-colors duration-300 scale-95 active:scale-100" href="../trung_t_m_th_nh_vi_n_s_ch_s_c_p_nh_t/code.html">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] tracking-[1.2px] uppercase font-medium">Thành viên</span>
+</a>
+</nav>
+<script src="../app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Find all top headers/navs and attach click event to any shopping_bag icons
+    const topContainers = document.querySelectorAll('header, nav.fixed.top-0');
+    topContainers.forEach(container => {
+        const icons = container.querySelectorAll('span.material-symbols-outlined');
+        icons.forEach(icon => {
+            if (icon.textContent.trim() === 'shopping_bag') {
+                icon.style.cursor = 'pointer';
+                icon.addEventListener('click', () => {
+                    window.location.href = '../gi_h_ng_m_u_m_i/code.html';
+                });
+            }
+        });
+    });
+});
+</script>
+</body></html>
