@@ -1620,7 +1620,7 @@
                 if (zoomCircle) zoomCircle.style.display = 'none';
             }
             if (title) {
-                let h1Title = document.querySelector('h1.text-4xl');
+                let h1Title = document.querySelector('h1');
                 if (h1Title) {
                     h1Title.textContent = title;
                 }
@@ -1631,7 +1631,14 @@
                 let priceSpan = document.querySelector('span.text-3xl');
                 if (priceSpan) priceSpan.textContent = priceStr;
                 let oldPriceSpan = document.querySelector('span.text-on-surface-variant.line-through');
-                if (oldPriceSpan) oldPriceSpan.style.display = 'none';
+                if (oldPriceSpan) {
+                    oldPriceSpan.style.display = 'inline';
+                    const rawPrice = parseInt(priceStr.replace(/[^\d]/g, '')) || 0;
+                    if (rawPrice > 0) {
+                        const oldPrice = Math.floor(rawPrice * 1.3 / 1000) * 1000;
+                        oldPriceSpan.textContent = oldPrice.toLocaleString('vi-VN') + 'đ';
+                    }
+                }
             }
         });
     </script>
@@ -1955,62 +1962,57 @@
             });
         });
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Parse URL params
-            const params = new URLSearchParams(window.location.search);
-            const pName = params.get('name');
-            const pPrice = params.get('price');
-            const pImg = params.get('img');
+    
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const title = urlParams.get('name') || urlParams.get('title');
+    const priceStr = urlParams.get('price');
+    const imgUrl = urlParams.get('img');
+    
+    if (imgUrl) {
+        let mainImg = document.querySelector('.relative.group.cursor-crosshair img') || document.querySelector('div.relative img.w-full');
+        if (mainImg) mainImg.src = imgUrl;
 
-            if (pName) {
-                // Find the main product h1 title
-                const titleEl = document.querySelector('h1');
-                if (titleEl) titleEl.textContent = pName;
-
-                // Hide the English subtitle since it's hardcoded to Polo
-                const subtitleEl = document.querySelector('h1 + p');
-                if (subtitleEl) subtitleEl.style.display = 'none';
-
-                // Update breadcrumb if any
-                const breadcrumbs = document.querySelectorAll('div.flex.items-center.gap-2.text-xs.font-medium span');
-                if (breadcrumbs.length > 2) {
-                    breadcrumbs[breadcrumbs.length - 1].textContent = pName;
-                }
-            }
-
-            if (pPrice) {
-                // Find the current price
-                const priceEl = document.querySelector('.flex.items-baseline.gap-4 span.text-3xl');
-                if (priceEl) priceEl.textContent = pPrice;
-
-                // Also update the original/strikethrough price by adding roughly 30%
-                const oldPriceEl = document.querySelector('.flex.items-baseline.gap-4 span.line-through');
-                if (oldPriceEl) {
-                    const rawPrice = parseInt(pPrice.replace(/[^\d]/g, '')) || 0;
-                    if (rawPrice > 0) {
-                        const oldPrice = Math.floor(rawPrice * 1.3 / 1000) * 1000;
-                        oldPriceEl.textContent = oldPrice.toLocaleString('vi-VN') + 'đ';
-                    }
-                }
-            }
-
-            if (pImg) {
-                // Update main and grid images
-                const mainImg = document.querySelector('div.relative img.w-full');
-                if (mainImg) {
-                    mainImg.src = pImg;
-                    mainImg.alt = pName || 'Product Image';
-                }
-
-                // Optionally update the secondary images just to ensure consistency
-                const secondaryImgs = document.querySelectorAll('div.grid.grid-cols-2 img');
-                secondaryImgs.forEach(img => {
-                    img.src = pImg;
-                });
-            }
+        let secondaryImages = document.querySelectorAll('.grid.grid-cols-2 img');
+        secondaryImages.forEach(img => {
+            img.src = imgUrl;
         });
-    </script>
+
+        let zoomCircle = document.querySelector('.absolute.bottom-6.right-6.w-48');
+        if (zoomCircle) zoomCircle.style.display = 'none';
+    }
+    
+    if (title) {
+        let h1Title = document.querySelector('h1.text-4xl') || document.querySelector('h1');
+        if (h1Title) {
+            h1Title.textContent = title;
+        }
+        let pSubtitle = document.querySelector('p.text-lg.text-on-surface-variant') || document.querySelector('h1 + p');
+        if (pSubtitle) pSubtitle.style.display = 'none';
+        
+        const breadcrumbs = document.querySelectorAll('div.flex.items-center.gap-2.text-xs.font-medium span');
+        if (breadcrumbs.length > 2) {
+            breadcrumbs[breadcrumbs.length - 1].textContent = title;
+        }
+    }
+    
+    if (priceStr) {
+        let priceSpan = document.querySelector('span.text-3xl');
+        if (priceSpan) priceSpan.textContent = priceStr;
+        
+        let oldPriceSpan = document.querySelector('span.text-on-surface-variant.line-through');
+        if (oldPriceSpan) {
+            oldPriceSpan.style.display = 'inline';
+            const rawPrice = parseInt(priceStr.replace(/[^\d]/g, '')) || 0;
+            if (rawPrice > 0) {
+                const oldPrice = Math.floor(rawPrice * 1.3 / 1000) * 1000;
+                oldPriceSpan.textContent = oldPrice.toLocaleString('vi-VN') + 'đ';
+            }
+        }
+    }
+});
+</script>
 </body>
 
 </html>
