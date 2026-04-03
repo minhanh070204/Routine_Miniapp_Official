@@ -391,4 +391,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // "THÊM VÀO GIỎ HÀNG" button -> go to cart
+    document.querySelectorAll('button').forEach(btn => {
+        if (btn.textContent.trim().includes('THÊM VÀO GIỎ HÀNG') || btn.textContent.trim().includes('Thêm vào giỏ hàng')) {
+            btn.addEventListener('click', () => {
+                window.location.href = '../gi_h_ng_m_u_m_i/code.html';
+            });
+        }
+    });
+});
+</script>
 </body></html>
