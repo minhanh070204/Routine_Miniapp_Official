@@ -5905,6 +5905,42 @@
             });
         });
     </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('input[placeholder="Tìm kiếm sản phẩm..."]');
+    // Finding the result text precisely "124 sản phẩm cho..."
+    const resultTexts = Array.from(document.querySelectorAll('p')).filter(p => p.textContent.includes('sản phẩm cho'));
+    
+    if (searchInput && resultTexts.length > 0) {
+        const searchResultText = resultTexts[0];
+        
+        const executeSearch = () => {
+            const keyword = searchInput.value.trim();
+            if (keyword) {
+                // Keep the number but change the keyword
+                searchResultText.textContent = 124 sản phẩm cho " + keyword + ";
+                // Add a small visual feedback
+                searchInput.blur();
+                // Optional: scroll to top of product grid
+            }
+        };
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                executeSearch();
+            }
+        });
+
+        // If there's a search icon right before it
+        const searchIcon = searchInput.previousElementSibling;
+        if (searchIcon && searchIcon.textContent.includes('search')) {
+            searchIcon.style.cursor = 'pointer';
+            searchIcon.addEventListener('click', executeSearch);
+        }
+    }
+});
+</script>
 </body>
 
 </html>
