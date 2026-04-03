@@ -328,4 +328,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Color selection - toggle ring on color buttons
+    const colorContainers = document.querySelectorAll('div.flex.gap-4');
+    colorContainers.forEach(container => {
+        const colorBtns = container.querySelectorAll('button.rounded-full[class*="bg-"]');
+        if (colorBtns.length < 2) return;
+        // Check if these look like color swatches (small round buttons)
+        const isColorGroup = Array.from(colorBtns).every(b => 
+            (b.classList.contains('w-10') || b.classList.contains('w-8') || b.classList.contains('w-6')) && 
+            b.classList.contains('rounded-full') && b.textContent.trim() === ''
+        );
+        if (!isColorGroup) return;
+        
+        // Find the color label heading
+        const parentSection = container.closest('div.space-y-4') || container.parentElement;
+        const colorLabel = parentSection ? parentSection.querySelector('h3') : null;
+        
+        // Map of bg colors to color names
+        const colorNames = {
+            '#E5E2E1': 'Cream Shell', '#e5e2e1': 'Cream Shell',
+            '#2F3334': 'Charcoal', '#2f3334': 'Charcoal', 
+            '#795656': 'Rosewood', '#795656': 'Rosewood',
+            '#222222': 'Black', '#1e293b': 'Navy',
+            '#f1f5f9': 'White', '#D2A7A7': 'Dusty Rose', '#d2a7a7': 'Dusty Rose',
+            '#403f3f': 'Dark Grey', '#777b7c': 'Steel Grey',
+            '#d4a373': 'Tan', '#ccd5ae': 'Sage'
+        };
+        
+        colorBtns.forEach(btn => {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => {
+                // Remove ring from all siblings
+                colorBtns.forEach(b => {
+                    b.classList.remove('ring-2', 'ring-offset-2', 'ring-[#222222]');
+                });
+                // Add ring to clicked
+                btn.classList.add('ring-2', 'ring-offset-2', 'ring-[#222222]');
+                
+                // Update color name label
+                if (colorLabel) {
+                    const bgClass = Array.from(btn.classList).find(c => c.startsWith('bg-[#'));
+                    if (bgClass) {
+                        const hex = bgClass.match(/#[0-9a-fA-F]+/);
+                        if (hex) {
+                            const name = colorNames[hex[0]] || hex[0];
+                            const labelText = colorLabel.textContent;
+                            const prefix = labelText.includes(':') ? labelText.split(':')[0] + ': ' : 'M\u00e0u s\u1eafc: ';
+                            colorLabel.textContent = prefix + name;
+                        }
+                    }
+                }
+            });
+        });
+    });
+    
+    // Size selection - toggle active state on size buttons
+    const sizeGrids = document.querySelectorAll('div.grid.grid-cols-4');
+    sizeGrids.forEach(grid => {
+        const sizeBtns = grid.querySelectorAll('button');
+        if (sizeBtns.length < 2) return;
+        const isSizeGroup = Array.from(sizeBtns).every(b => 
+            ['S','M','L','XL','XXL','XS','2XL','28','29','30','31','32','33','34'].includes(b.textContent.trim())
+        );
+        if (!isSizeGroup) return;
+        
+        sizeBtns.forEach(btn => {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('click', () => {
+                sizeBtns.forEach(b => {
+                    b.className = 'py-4 border border-outline-variant/30 rounded-lg hover:border-[#222222] transition-all text-sm font-medium tracking-widest';
+                });
+                btn.className = 'py-4 bg-[#222222] text-white rounded-lg transition-all text-sm font-bold tracking-widest';
+            });
+        });
+    });
+});
+</script>
 </body></html>
